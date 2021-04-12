@@ -1,0 +1,29 @@
+.firstSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-color: grey;
+}
+
+.titleMain {
+  text-align: center;
+}
+
+.secondSection {
+  height: 100vh;
+}
+
+.thirdSection {
+  height: 95vh;
+}
+
+.footer {
+  height: 5vh;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
