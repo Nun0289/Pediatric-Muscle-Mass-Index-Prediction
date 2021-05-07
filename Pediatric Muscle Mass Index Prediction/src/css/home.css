@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  height: calc(100vh - 64px);
   background-color: grey;
 }
 
@@ -12,11 +12,11 @@
 }
 
 .secondSection {
-  height: 100vh;
+  height: calc(100vh - 64px);
 }
 /* thirdSection */
 .thirdSection {
-  height: 95vh;
+  height: calc(100vh - 64px);
   background-color: orange;
   display: flex;
   justify-content: center;

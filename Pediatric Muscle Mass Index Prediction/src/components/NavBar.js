@@ -1,28 +1,63 @@
-import { Nav, Navbar } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import { NavLink, Link } from "react-router-dom";
+import Typography from "@material-ui/core/Typography";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  title: {
+    flexGrow: 1,
+  },
+  toolbar: {
+    backgroundColor: "white",
+    color: "black",
+  },
+}));
 const NavBar = () => {
+  const classes = useStyles();
   return (
-    <Navbar bg="light" className="position-fixed w-100">
-      <Navbar.Brand href="/">KMITL</Navbar.Brand>
-      <Nav className="justify-content-end" activeKey="/">
-        <Nav.Item>
-          <Nav.Link as={NavLink} exact to="/">
-            หน้าแรก
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link as={NavLink} exact to="/about">
-            เกี่ยวกับ
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link as={NavLink} exact to="/calc">
-            โปรแกรมคำนวณ
-          </Nav.Link>
-        </Nav.Item>
-      </Nav>
-    </Navbar>
+    <div className={classes.root}>
+      <AppBar position="fixed">
+        <Toolbar className={classes.toolbar}>
+          <Typography className={classes.title}>
+            <Button component={Link} to="/">
+              KMITL
+            </Button>
+          </Typography>
+          <div>
+            <Button
+              component={NavLink}
+              activeStyle={{ backgroundColor: "orange", color: "white" }}
+              exact
+              to="/"
+            >
+              หน้าแรก
+            </Button>
+            <Button
+              component={NavLink}
+              activeStyle={{ backgroundColor: "orange", color: "white" }}
+              exact
+              to="/about"
+            >
+              เกี่ยวกับ
+            </Button>
+            <Button
+              component={NavLink}
+              activeStyle={{ backgroundColor: "orange", color: "white" }}
+              exact
+              to="/calc"
+            >
+              โปรแกรมคำนวณ
+            </Button>
+          </div>
+        </Toolbar>
+      </AppBar>
+      <Toolbar />
+    </div>
   );
 };
 export default NavBar;
