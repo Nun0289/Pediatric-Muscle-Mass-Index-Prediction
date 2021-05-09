@@ -118,7 +118,6 @@ const Home = () => {
           </Container>
         </div>
       </div>
-      <div className="footer">something that i don't know</div>
     </>
   );
 };
