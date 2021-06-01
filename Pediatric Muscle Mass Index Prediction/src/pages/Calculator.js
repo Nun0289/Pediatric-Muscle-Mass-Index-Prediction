@@ -2,6 +2,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Paper, Container, Button } from "@material-ui/core";
 import TablePercentile from "../components/TablePercentile";
 import Grid from "@material-ui/core/Grid";
+import axios from "axios";
+import { saveAs } from "file-saver";
 
 const useStyles = makeStyles((theme) => ({
   calcPage: {
@@ -33,6 +35,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const createAndDownloadPDF = () => {
+  axios.post('/create-pdf' ).then(() => axios.get('fetch-pdf', { responseType: 'blob'}))
+  .then((res) => {
+    const pdfBlob = new Blob([res.data], {type: 'application/pdf'})
+    saveAs(pdfBlob, 'REPORT.pdf')
+  })
+}
 const Calculator = () => {
   const classes = useStyles();
   return (
@@ -86,6 +95,7 @@ const Calculator = () => {
             className={classes.saveButton}
             color="primary"
             variant="contained"
+            onClick={createAndDownloadPDF}
           >
             บันทึกผล
           </Button>
