@@ -4,6 +4,7 @@ import TablePercentile from "../components/TablePercentile";
 import Grid from "@material-ui/core/Grid";
 import axios from "axios";
 import { saveAs } from "file-saver";
+import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   calcPage: {
@@ -35,14 +36,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const createAndDownloadPDF = () => {
-  axios.post('/create-pdf' ).then(() => axios.get('fetch-pdf', { responseType: 'blob'}))
+const createAndDownloadPDF = (NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX) => {
+  axios.post('/create-pdf', {NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX}).then(() => axios.get('fetch-pdf', { responseType: 'blob'}))
   .then((res) => {
     const pdfBlob = new Blob([res.data], {type: 'application/pdf'})
     saveAs(pdfBlob, 'REPORT.pdf')
   })
 }
+
 const Calculator = () => {
+  const [ name, setName] = useState("mem");
+  const [ age, setAge] = useState(10);
   const classes = useStyles();
   return (
     <div className={classes.calcPage}>
@@ -95,7 +99,7 @@ const Calculator = () => {
             className={classes.saveButton}
             color="primary"
             variant="contained"
-            onClick={createAndDownloadPDF}
+            onClick={() => createAndDownloadPDF(name)}
           >
             บันทึกผล
           </Button>

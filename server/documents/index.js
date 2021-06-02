@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = ({NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX}) => {
     return `
     <html lang="en">
 <head>
@@ -40,7 +40,7 @@ module.exports = () => {
     <div class="contain">
         <p style="line-height: 1.6;">เปอร์เซ็นมวลกล้ามเนื้อต่อน้ำหนักตัว<br>
         99.00%<br>
-        ค่าระหว่าง 25th-50th<br><br></p>
+        ค่าระหว่าง 25th-50th<br>${NAME}<br></p>
         <div class="content">
             <p style="text-indent: 4px;">ค่าปกติเปอร์เซ็นไทล์</p>
             <table style="font-size:10px;width:100%;text-align:center;" class="w3-table w3-bordered">
