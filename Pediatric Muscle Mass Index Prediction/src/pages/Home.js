@@ -42,7 +42,7 @@ const Home = () => {
                 <Form.Control type="number" min="1" />
               </Form.Group>
               <Form.Group>
-                <Form.Label>มวลกล้ามเนื้อ (กิโลกรัม)</Form.Label>
+                <Form.Label>เเรงบีบมือ (กิโลกรัม)</Form.Label>
                 <Form.Control type="number" min="1" />
               </Form.Group>
               <Button variant="primary" className="w-100">
