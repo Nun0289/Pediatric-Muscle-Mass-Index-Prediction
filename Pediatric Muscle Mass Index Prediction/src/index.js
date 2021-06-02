@@ -9,7 +9,7 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
+import "./css/home.css";
 ReactDOM.render(
   <React.StrictMode>
     <Router>
@@ -25,6 +25,7 @@ ReactDOM.render(
           <Calculator />
         </Route>
       </Switch>
+      <div className="footer">something that i don't know</div>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
