@@ -9,23 +9,26 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { ScrollingProvider } from "react-scroll-section";
 import "./css/home.css";
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <NavBar />
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/calc">
-          <Calculator />
-        </Route>
-      </Switch>
-      <div className="footer">something that i don't know</div>
+      <ScrollingProvider scrollBehavior="smooth">
+        <NavBar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/calc">
+            <Calculator />
+          </Route>
+        </Switch>
+        <div className="footer">something that i don't know</div>
+      </ScrollingProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
