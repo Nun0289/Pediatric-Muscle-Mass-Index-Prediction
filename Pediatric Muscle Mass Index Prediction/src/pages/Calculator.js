@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import axios from "axios";
 import { saveAs } from "file-saver";
 import { useState } from "react";
-
+import results from "../function/calculatorFunction";
 const useStyles = makeStyles((theme) => ({
   calcPage: {
     height: "100%",
@@ -36,18 +36,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const createAndDownloadPDF = (NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX) => {
-  axios.post('/create-pdf', {NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX}).then(() => axios.get('fetch-pdf', { responseType: 'blob'}))
-  .then((res) => {
-    const pdfBlob = new Blob([res.data], {type: 'application/pdf'})
-    saveAs(pdfBlob, 'REPORT.pdf')
-  })
-}
+const createAndDownloadPDF = (
+  NAME,
+  AGE,
+  HEIGHT,
+  BMI,
+  BMIZSCORE,
+  MUSCLE_INDEX
+) => {
+  axios
+    .post("/create-pdf", { NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX })
+    .then(() => axios.get("fetch-pdf", { responseType: "blob" }))
+    .then((res) => {
+      const pdfBlob = new Blob([res.data], { type: "application/pdf" });
+      saveAs(pdfBlob, "REPORT.pdf");
+    });
+};
 
 const Calculator = () => {
-  const [ name, setName] = useState("mem");
-  const [ age, setAge] = useState(10);
+  const [name, setName] = useState("mem");
+  const [age, setAge] = useState(10);
   const classes = useStyles();
+
+  results("men", 7, 27.6, 120, 5);
   return (
     <div className={classes.calcPage}>
       <Container maxWidth="lg" disableGutters>
