@@ -4,31 +4,28 @@ import "./index.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Calculator from "./pages/Calculator";
-import NavBar from "./components/NavBar";
+
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { ScrollingProvider } from "react-scroll-section";
+
 import "./css/home.css";
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <ScrollingProvider scrollBehavior="smooth">
-        <NavBar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/calc">
-            <Calculator />
-          </Route>
-        </Switch>
-        <div className="footer">something that i don't know</div>
-      </ScrollingProvider>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="/calc">
+          <Calculator />
+        </Route>
+      </Switch>
+      <div className="footer">something that i don't know</div>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
