@@ -10,14 +10,14 @@ module.exports = ({NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX}) => {
     <style>
         body{
             padding: 2px;
-            font-size: 10px;
+            font-size: 8px;
         }
         .contain {
             text-align: center;
             background-color: lightgray;
             width: auto;
-            height:180px;
-            margin:10px;
+            height:155px;
+            margin:5px;
             padding: 2px;
             border-radius: 3px;
         }
@@ -34,6 +34,9 @@ module.exports = ({NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX}) => {
             padding:6px;
             height:100%;
         }
+        p {
+            word-break: break-all;
+        }
     </style>
 </head>
 <body>
@@ -43,7 +46,7 @@ module.exports = ({NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX}) => {
         ค่าระหว่าง 25th-50th<br>${NAME}<br></p>
         <div class="content">
             <p style="text-indent: 4px;">ค่าปกติเปอร์เซ็นไทล์</p>
-            <table style="font-size:10px;width:100%;text-align:center;" class="w3-table w3-bordered">
+            <table style="font-size:8px;width:100%;text-align:center;" class="w3-table w3-bordered">
                 <tr>
                     <th>อายุ</th>
                     <th>1th</th>
@@ -82,7 +85,7 @@ module.exports = ({NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX}) => {
         ( มวลกล้ามเนื้อปกติ )</p>
         <div class="content">
             <p style="text-indent: 4px;">ค่าปกติเปอร์เซ็นไทล์</p>
-            <table style="font-size:10px;width:100%;text-align:center;" class="w3-table w3-bordered">
+            <table style="font-size:8px;width:100%;text-align:center;" class="w3-table w3-bordered">
                 <tr>
                     <th>อายุ</th>
                     <th>1th</th>
@@ -121,7 +124,7 @@ module.exports = ({NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX}) => {
         ปกติ</p>
         <div class="content">
             <p style="text-indent: 4px;">ค่าปกติเปอร์เซ็นไทล์</p>
-            <table style="font-size:10px;width:100%;text-align:center;" class="w3-table w3-bordered">
+            <table style="font-size:8px;width:100%;text-align:center;" class="w3-table w3-bordered">
                 <tr>
                     <th>อายุ</th>
                     <th>1th</th>
@@ -154,16 +157,45 @@ module.exports = ({NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX}) => {
         </div>
     </div>
     <div style="
-    background-color: white;
-    width: auto;
-    height:247px;
-    margin:10px;
-    border: 1px solid lightgray;
-    border-radius: 3px;
-    
-    align-items: stretch;">
-        <div class="conclution">คำแนะนำ</div>
-        <div class="conclution" style="border-left: 1px solid lightgray;">สรุปผล</div>
+    text-align: left;
+            background-color: white;
+            width: auto;
+            height:345px;
+            margin:5px;
+            border-radius: 3px;
+    ">
+        <div style="float:left;width:50%;border: 1px solid lightgray;height:100%;padding:4px;
+        border-radius: 3px">
+        <p style="padding-bottom: 7px;">คำแนะนำ</p>
+        <p>การแปรผลดัชนีมวลกล้ามเนื้อ : </p>
+        <p>การแปรผลดัชนีมวลกาย : </p>
+        <p>การแปรผลดังนีกล้ามเนื้อและดัชนีมวลกาย : </p>
+        <p>แพทย์ : </p>
+        <pอาหาร : </p>
+        <p>กิจกรรมทางกาย : </p>
+        <p>การออกกำลังกาย : </p></div>
+        <div style="display:inline-block;width:50%;
+        border: 1px solid lightgray;
+        height:100%;
+        padding:4px;
+        border-radius: 3px">
+        <p style="padding-bottom: 7px;">สรุปผล</p>
+        <p>เพศ : </p>
+        <p>อายุ : </p>
+        <p>น้ำหนัก : </p>
+        <p>ส่วนสูง : </p>
+        <p>น้ำหนักมวลกล้ามเนื้อ : </p>
+        <p>เปอร์เซ็นมวลกล้ามเนื้อต่อน้ำหนักตัว : </p>
+        <p>ดัชนีมวลกล้ามเนื้อ : </p>
+        <p>การแปรผลดัชนีมวลกล้ามเนื้อ : </p>
+        <p>ดัชนีมวลกาย : </p>
+        <p>การแปรผลดัชนีมวลกาย : </p>
+        <p>การแปรผลดัชนีกล้ามเนื้อและดัชนีมวลกาย : </p>
+        <p>แพทย์ : </p>
+        <pอาหาร : </p>
+        <p>กิจกรรมทางกาย : </p>
+        <p>การออกกำลังกาย : </p>
+        </div>
     </div>
 </body>
 </html>`

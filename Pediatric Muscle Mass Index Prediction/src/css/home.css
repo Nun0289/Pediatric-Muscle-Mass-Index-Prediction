@@ -3,20 +3,85 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: calc(100vh - 64px);
-  background-color: grey;
+  min-height: calc(100vh);
+  color: white;
+  background-image: url("../img/fitness.jpg");
+  overflow: hidden;
+  text-shadow: 0px 1px black;
+  margin: 0;
 }
-
+.firstSection::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  filter: blur(10px);
+}
 .titleMain {
   text-align: center;
+  /* font-size: 3vw; */
+  z-index: 2;
+  /* font-weight: bold; */
+}
+.descMain {
+  z-index: 2;
+  /* font-size: 1.5vw; */
+  text-align: center;
+}
+/* secondSection */
+.secondSection {
+  min-height: calc(100vh + 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.secondContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.secondSection {
-  height: calc(100vh - 64px);
+.iconSection {
+  text-align: center;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  width: 85%;
+  flex-wrap: wrap;
+  margin-bottom: 3vw;
 }
+.iconOutsource {
+  color: #ff4500;
+  font-size: 7.5vw;
+  margin: 5%;
+}
+.iconHeader {
+  font-weight: bold;
+}
+
+.aboutSection {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.aboutChild {
+  width: 45%;
+}
+.aboutDesc {
+  font-weight: bold;
+  text-align: center;
+}
+.observeImg {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
 /* thirdSection */
 .thirdSection {
-  height: calc(100vh - 64px);
+  height: calc(100vh);
   background-color: orange;
   display: flex;
   justify-content: center;
