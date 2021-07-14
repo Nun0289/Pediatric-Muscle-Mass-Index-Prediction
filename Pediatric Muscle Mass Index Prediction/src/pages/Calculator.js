@@ -6,9 +6,16 @@ import axios from "axios";
 import { saveAs } from "file-saver";
 import { useState } from "react";
 import results from "../function/calculatorFunction";
+import FacebookIcon  from '@material-ui/icons/Facebook';  
 
 import pdfMake from "pdfmake/build/pdfmake";
-import pdfFonts from "pdfmake/build/vfs_fonts";
+// import pdfFonts from "pdfmake/build/vfs_fonts";
+
+import { Icon } from 'semantic-ui-react';
+import { FaTwitter } from "react-icons/fa";
+import { IoAccessibility, IoManSharp, IoMaleFemale, IoFastFood, IoWalk, IoBicycle } from "react-icons/io5";
+import { GiBiceps } from "react-icons/gi";
+import { HiOutlinePlus, HiOutlineSwitchVertical } from "react-icons/hi";
 
 import { doc } from "../documents/Template";
 
@@ -125,6 +132,7 @@ const Calculator = () => {
               <Paper className={classes.boxCard}>
                 <div><div className={classes.headText}>MMI</div> : ค่าดัชนีมวลกล้ามเนื้อ</div>
                 <br></br>
+                
                 <h3 className={classes.headText}>17.30</h3>
                 <br></br>
                 <br></br>
@@ -137,34 +145,34 @@ const Calculator = () => {
               <Paper className={classes.cardOutro}>
                 <h5>คำแนะนำ</h5>
                 <br></br>
-                <p>การแปรผลดัชนีมวลกล้ามเนื้อ : </p>
-                <p>การแปรผลดัชนีมวลกาย : </p>
-                <p>การแปรผลดังนีกล้ามเนื้อและดัชนีมวลกาย : </p>
-                <p>แพทย์ : </p>
-                <p>อาหาร : </p>
-                <p>กิจกรรมทางกาย : </p>
-                <p>การออกกำลังกาย : </p>
+                <p><GiBiceps />การแปรผลดัชนีมวลกล้ามเนื้อ : </p>
+                <p><GiBiceps />การแปรผลดัชนีมวลกาย : </p>
+                <p><GiBiceps />การแปรผลดังนีกล้ามเนื้อและดัชนีมวลกาย : </p>
+                <p><HiOutlinePlus />แพทย์ : </p>
+                <p><IoFastFood />อาหาร : </p>
+                <p><IoWalk />กิจกรรมทางกาย : </p>
+                <p><IoBicycle />การออกกำลังกาย : </p>
               </Paper>
             </Grid>
             <Grid xs={12} sm={6}>
               <Paper className={classes.cardOutro}>
                 <h5>สรุปผล</h5>
                 <br></br>
-                <p>เพศ : </p>
-                <p>อายุ : </p>
-                <p>น้ำหนัก : </p>
-                <p>ส่วนสูง : </p>
-                <p>น้ำหนักมวลกล้ามเนื้อ : </p>
-                <p>เปอร์เซ็นมวลกล้ามเนื้อต่อน้ำหนักตัว : </p>
-                <p>ดัชนีมวลกล้ามเนื้อ : </p>
-                <p>การแปรผลดัชนีมวลกล้ามเนื้อ : </p>
-                <p>ดัชนีมวลกาย : </p>
-                <p>การแปรผลดัชนีมวลกาย : </p>
-                <p>การแปรผลดัชนีกล้ามเนื้อและดัชนีมวลกาย : </p>
-                <p>แพทย์ : </p>
-                <p>อาหาร : </p>
-                <p>กิจกรรมทางกาย : </p>
-                <p>การออกกำลังกาย : </p>
+                <p><IoMaleFemale />เพศ : </p>
+                <p><HiOutlineSwitchVertical />อายุ : </p>
+                <p><IoManSharp />น้ำหนัก : </p>
+                <p><IoAccessibility />ส่วนสูง : </p>
+                <p><GiBiceps />น้ำหนักมวลกล้ามเนื้อ : </p>
+                <p><GiBiceps />เปอร์เซ็นมวลกล้ามเนื้อต่อน้ำหนักตัว : </p>
+                <p><GiBiceps />ดัชนีมวลกล้ามเนื้อ : </p>
+                <p><GiBiceps />การแปรผลดัชนีมวลกล้ามเนื้อ : </p>
+                <p><GiBiceps />ดัชนีมวลกาย : </p>
+                <p><GiBiceps />การแปรผลดัชนีมวลกาย : </p>
+                <p><GiBiceps />การแปรผลดัชนีกล้ามเนื้อและดัชนีมวลกาย : </p>
+                <p><HiOutlinePlus />แพทย์ : </p>
+                <p><IoFastFood />อาหาร : </p>
+                <p><IoWalk />กิจกรรมทางกาย : </p>
+                <p><IoBicycle />การออกกำลังกาย : </p>
               </Paper>
             </Grid>
           </Grid>

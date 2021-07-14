@@ -16,6 +16,7 @@ import { Section } from "react-scroll-section";
 import { FaWeight, FaRunning, FaCommentMedical, FaPollH } from "react-icons/fa";
 import doctorObserve from "../img/doctorObserve.jpg";
 
+
 const useStyles = makeStyles((theme) => ({
   labelRadio: {
     marginBottom: 0,
