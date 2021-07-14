@@ -85,22 +85,22 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-// const createAndDownloadPDF = (
-//   NAME,
-//   AGE,
-//   HEIGHT,
-//   BMI,
-//   BMIZSCORE,
-//   MUSCLE_INDEX
-// ) => {
-//   axios
-//     .post("/create-pdf", { NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX })
-//     .then(() => axios.get("fetch-pdf", { responseType: "blob" }))
-//     .then((res) => {
-//       const pdfBlob = new Blob([res.data], { type: "application/pdf" });
-//       saveAs(pdfBlob, "REPORT.pdf");
-//     });
-// };
+const createAndDownloadPDF = (
+  NAME,
+  AGE,
+  HEIGHT,
+  BMI,
+  BMIZSCORE,
+  MUSCLE_INDEX
+) => {
+  axios
+    .post("/create-pdf", { NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX })
+    .then(() => axios.get("fetch-pdf", { responseType: "blob" }))
+    .then((res) => {
+      const pdfBlob = new Blob([res.data], { type: "application/pdf" });
+      saveAs(pdfBlob, "REPORT.pdf");
+    });
+};
 
 function printPDF(){
   pdfMake.createPdf(doc).download("report.pdf")
@@ -181,7 +181,7 @@ const Calculator = () => {
             color="primary"
             variant="contained"
             // onClick={() => createAndDownloadPDF(name)}
-            onClick={() => printPDF()}
+            onClick={() => createAndDownloadPDF()}
           >
             บันทึกผล
           </Button>
