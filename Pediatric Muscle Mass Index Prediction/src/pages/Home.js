@@ -8,7 +8,9 @@ import NavBar from "../components/NavBar";
 import Container from "@material-ui/core/Container";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import "../css/home.css";
+import { Modal } from "react-bootstrap";
 import { useState } from "react";
+import results from "../function/calculatorFunction";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import { TextField, Button, Grid, Hidden } from "@material-ui/core";
@@ -17,6 +19,8 @@ import { useScrollSection } from "react-scroll-section";
 import { FaWeight, FaRunning, FaCommentMedical, FaPollH } from "react-icons/fa";
 import fatWeigth from "../img/fat-weigth.png";
 import kid from "../img/Kid.png";
+import { useHistory } from "react-router-dom";
+import { red } from "@material-ui/core/colors";
 const useStyles = makeStyles((theme) => ({
   labelRadio: {
     marginBottom: 0,
@@ -28,19 +32,52 @@ const useStyles = makeStyles((theme) => ({
   textField: {
     marginBottom: 10,
   },
+  
 }));
 
 const Home = () => {
   const classes = useStyles();
-  const [value, setValue] = useState(null);
+  const [gender, setGender] = useState("male");
+  const [age, setAge] = useState('');
+  const [height, setHeight] = useState('');
+  const [weight, setWeight] = useState('');
+  const [gripstrength, setGripstrength] = useState('');
+
+  const [showModle, setShowModle] = useState(false);
+  const [errorModle,setErrorModle] = useState('')
   const slideToCalc = useScrollSection("calc");
+  const history = useHistory();
   const clickHandler = () => {
     document.getElementById("calc").scrollIntoView();
   };
-  const handleChange = (event) => {
-    setValue(event.target.value);
+  const onSubmit = () => {
+    if (
+      gender != '' &&
+      age != ''&&
+      height != '' &&
+      weight != '' &&
+      gripstrength != ''
+    ) {
+      if(age >= 5 && age <=16){
+      var result = results(gender,age,weight,height,gripstrength)
+      history.push({pathname:"/calc",state:{result}});
+      }else{
+        setErrorModle('ช่วงอายุผิดพลาด(5-16 ปี)กรุณากรอกใหม่')
+        setShowModle(true)
+      }
+    }else{
+      setErrorModle('กรุณากรอกเเบบฟอรมให้ครบ')
+      setShowModle(true)
+    }
   };
   return (
+    <div>
+    <Modal show={showModle} onHide={() => setShowModle(!showModle)} style={{paddingTop:200}}>
+    <Modal.Body>{errorModle}</Modal.Body>
+    <Modal.Footer>
+      <Button onClick={() => setShowModle(!showModle)}>Close</Button>
+    </Modal.Footer>
+  </Modal>
     <div className="homePage">
       <ScrollingProvider scrollBehavior="smooth">
         <NavBar />
@@ -157,7 +194,9 @@ const Home = () => {
                       </Grid>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                      <h4>โปรแกรมประเมินดัชนีมวลกล้ามเนื้อสำหรับเด็กด้วยแรงบีบมือ</h4>
+                      <h4>
+                        โปรแกรมประเมินดัชนีมวลกล้ามเนื้อสำหรับเด็กด้วยแรงบีบมือ
+                      </h4>
                       การรณรงค์ส่งเสริมกิจกรรมทางกาย
                       กระทำเพื่อการควบคุมภาวะอ้วนหรือการเพิ่มขึ้นของมวลไขมันในร่างกายตลอดสองทศวรรษ
                       พบว่าไม่เป็นไปตามเป้าหมายตามความคาดหวัง
@@ -214,30 +253,32 @@ const Home = () => {
           <div className="thirdSection">
             <div className="boxWhite">
               <Container>
-                <h1 style={{ textAlign: "center" }}>โปรแกรมคำนวณ</h1>
+                <h1 style={{ textAlign: "center",paddingTop:20 }}>โปรแกรมคำนวณ</h1>
                 <FormControl margin="normal" className={classes.root}>
                   <FormLabel>เพศ</FormLabel>
-                  <RadioGroup
-                    aria-label="gender"
-                    name="gender1"
-                    value={value}
-                    onChange={handleChange}
-                  >
+                  <RadioGroup aria-label="gender" name="gender1">
                     <FormControlLabel
-                      className={classes.labelRadio}
                       value="male"
+                      onClick={() => setGender("male")}
+                      checked={gender === "male"}
+                      className={classes.labelRadio}
                       control={<Radio color="primary" />}
                       label="ชาย"
                     />
                     <FormControlLabel
-                      className={classes.labelRadio}
                       value="female"
+                      onClick={() => setGender("female")}
+                      checked={gender === "female"}
+                      className={classes.labelRadio}
                       control={<Radio color="primary" />}
                       label="หญิง"
                     />
                   </RadioGroup>
-                  <FormLabel>อายุ</FormLabel>
+                  <FormLabel style={{paddingBottom:10}}>อายุ</FormLabel>
                   <TextField
+                    name="age"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
                     className={classes.textField}
                     InputProps={{
                       endAdornment: (
@@ -247,8 +288,10 @@ const Home = () => {
                     variant="outlined"
                     fullWidth
                   />
-                  <FormLabel>ส่วนสูง</FormLabel>
+                  <FormLabel style={{paddingBottom:10}}>ส่วนสูง</FormLabel>
                   <TextField
+                    value={height}
+                    onChange={(e) => setHeight(e.target.value)}
                     className={classes.textField}
                     InputProps={{
                       endAdornment: (
@@ -260,8 +303,10 @@ const Home = () => {
                     variant="outlined"
                     fullWidth
                   />
-                  <FormLabel>น้ำหนัก</FormLabel>
+                  <FormLabel style={{paddingBottom:10}}>น้ำหนัก</FormLabel>
                   <TextField
+                    value={weight}
+                    onChange={(e) => setWeight(e.target.value)}
                     className={classes.textField}
                     InputProps={{
                       endAdornment: (
@@ -271,8 +316,10 @@ const Home = () => {
                     variant="outlined"
                     fullWidth
                   />
-                  <FormLabel>มวลกล้ามเนื้อ</FormLabel>
+                  <FormLabel style={{paddingBottom:10}}>เเรงบีบมือ</FormLabel>
                   <TextField
+                    value={gripstrength}
+                    onChange={(e) => setGripstrength(e.target.value)}
                     className={classes.textField}
                     InputProps={{
                       endAdornment: (
@@ -282,15 +329,23 @@ const Home = () => {
                     variant="outlined"
                     fullWidth
                   />
-                  <Button color="primary" variant="contained">
+                  <div style={{paddingBottom:10,width:"100%"}}>
+                  <Button
+                  style={{width:"100%"}}
+                    color="primary"
+                    variant="contained"
+                    onClick={()=>onSubmit()}
+                  >
                     ยืนยัน
                   </Button>
+                  </div>
                 </FormControl>
               </Container>
             </div>
           </div>
         </Section>
       </ScrollingProvider>
+    </div>
     </div>
   );
 };

@@ -1,7 +1,6 @@
 .homePage {
   font-family: "Kanit", sans-serif;
 }
-
 .firstSection {
   display: flex;
   justify-content: center;
@@ -83,7 +82,7 @@
 
 /* thirdSection */
 .thirdSection {
-  height: calc(100vh);
+  height: calc(110vh);
   background-color: orange;
   display: flex;
   justify-content: center;
@@ -95,7 +94,6 @@
   background-color: white;
   border-radius: 5px;
   width: 80%;
-  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
