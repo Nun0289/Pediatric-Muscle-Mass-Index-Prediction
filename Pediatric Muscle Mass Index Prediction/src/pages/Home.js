@@ -15,6 +15,7 @@ import { TextField, Button, Grid, Hidden } from "@material-ui/core";
 import { Section } from "react-scroll-section";
 import { useScrollSection } from "react-scroll-section";
 import { FaWeight, FaRunning, FaCommentMedical, FaPollH } from "react-icons/fa";
+import doctorObserve from "../img/doctorObserve.jpg";
 import fatWeigth from "../img/fat-weigth.png";
 import kid from "../img/Kid.png";
 const useStyles = makeStyles((theme) => ({

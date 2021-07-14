@@ -7,6 +7,7 @@ module.exports = ({NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX}) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body{
             padding: 2px;
@@ -167,7 +168,7 @@ module.exports = ({NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX}) => {
         <div style="float:left;width:50%;border: 1px solid lightgray;height:100%;padding:4px;
         border-radius: 3px">
         <p style="padding-bottom: 7px;">คำแนะนำ</p>
-        <p>การแปรผลดัชนีมวลกล้ามเนื้อ : </p>
+        <p><i class="fa fa-cloud"></i>การแปรผลดัชนีมวลกล้ามเนื้อ : </p>
         <p>การแปรผลดัชนีมวลกาย : </p>
         <p>การแปรผลดังนีกล้ามเนื้อและดัชนีมวลกาย : </p>
         <p>แพทย์ : </p>
