@@ -61,7 +61,7 @@ const Home = () => {
     ) {
       if(age >= 5 && age <=16){
       var result = results(gender,age,weight,height,gripstrength)
-      history.push({pathname:"/calc",state:{result}});
+      history.push({pathname:"/calc",result:{result}});
       }else{
         setErrorModle('ช่วงอายุผิดพลาด(5-16 ปี)กรุณากรอกใหม่')
         setShowModle(true)
