@@ -5,6 +5,14 @@ const useStyles = makeStyles((theme) => ({
   container: {
     padding: 60,
   },
+  headText: {
+    fontSize: "2em",
+    display: "inline-block",
+  },
+  subheadText: {
+    fontSize: "1.5em",
+    display: "inline-block",
+  },
 }));
 
 const About = () => {
@@ -16,97 +24,224 @@ const About = () => {
     <>
       <NavBar />
       <div className={classes.container}>
+        <div className={classes.headText}>คำนำ</div>
         <p>
-          In consectetur laborum duis amet labore ex. Sint do do excepteur non
-          sunt laboris. Lorem consectetur sunt duis occaecat. Id ea velit in
-          eiusmod sit veniam exercitation dolore esse. Esse mollit in enim est
-          ad minim duis fugiat irure. Non aute elit nulla nisi ipsum. Duis dolor
-          et fugiat exercitation proident excepteur proident proident. Laboris
-          magna duis commodo anim minim nulla velit qui. Qui fugiat amet labore
-          deserunt do nisi laborum ullamco cupidatat. Labore exercitation enim
-          Lorem voluptate sit qui tempor. Nostrud et qui minim dolore ad
-          pariatur mollit cillum. Occaecat exercitation voluptate fugiat
-          proident adipisicing duis aute adipisicing. Id consequat non velit
-          minim elit consectetur sint nulla esse. Non do mollit voluptate culpa
-          dolor culpa aliqua. Lorem quis commodo Lorem ullamco officia ex ad. Ad
-          aute sunt et deserunt officia ea sunt exercitation. Consectetur
-          aliquip non adipisicing aute commodo ullamco. Aute deserunt Lorem quis
-          do aute et. Lorem sit esse cupidatat anim voluptate fugiat qui. Ipsum
-          in incididunt ex irure magna commodo. Do Lorem consectetur do
-          adipisicing magna cupidatat aliqua cupidatat irure.
+          โรงเรียนทุกแห่งจะมีการเฝ้าระวังและติดตามสุขภาพทางกายของเด็กนักเรียนเป็นประจำทุกปี
+          โดยอาศัยการชั่งน้ำหนักตัว วัดส่วนสูง และคำนวณเป็นค่าดัชนีมวลกาย
+          หรือน้ำหนักตัวที่ปรับด้วยค่าความสูง
+          เพื่อใช้บ่งบอกถึงระดับการเจริญเติบโตและสภาวะโภชนาการของเด็กแต่ละคน
+          น้ำหนักตัว ส่วนสูงและองค์ประกอบของร่างกายจะมีการเปลี่ยนแปลง
+          เมื่อเด็กเจริญโตเข้าสู่วัยผู้ใหญ่
+          น้ำหนักตัวเกิดจากองค์ประกอบของร่างกาย
+          ซึ่งประกอบด้วยมวลไขมันและมวลปราศจากไขมัน
+          มวลกล้ามเนื้อคือองค์ประกอบหลักของมวลปราศจากไขมัน
+          เด็กผอมหรือเด็กที่มีดัชนีมวลกายต่ำจะมีการลดลงของทั้งมวลไขมันและมวลกล้ามเนื้อ
+          ในเด็กอ้วนหรือเด็กที่มีดัชนีมวลกายสูง
+          จะมีความหลากหลายขององค์ประกอบร่างกาย จะมีการเพิ่มขึ้นมวลไขมัน
+          แต่มวลกล้ามเนื้อกลับมีความหลากหลาย โดยอาจมีค่าลดลง เป็นปกติ
+          หรือมากกว่าปกติ นอกเหนือจากทำให้เกิดการเคลื่อนไหวของร่างกาย
+          มวลกล้ามเนื้อยังมีหน้าที่เกี่ยวข้องกับการควบคุมพลังงานของร่างกายการเพิ่มขึ้นของมวลไขมัน
+          การลดลงของมวลกล้ามเนื้อ อย่างใดอย่างหนึ่งหรือทั้งสองประการ
+          ต่างมีผลเสียต่อสุขภาพและมีผลเสียต่อเนื่องในระยะยาวจนเข้าสู่วัยผู้ใหญ่
+          อาหารและกิจกรรมทางกายคือปัจจัยหลักมีผลต่อการเปลี่ยนแปลงขององค์ประกอบของร่างกายในเด็กที่กำลังเจริญเติบโต
         </p>
         <br />
-        Magna nostrud anim adipisicing voluptate deserunt. Do minim officia
-        ipsum est eiusmod est consectetur ex sint. Duis aliquip excepteur aliqua
-        magna consectetur anim anim. Magna est dolore magna cillum eiusmod
-        deserunt laborum ea in. Magna et ad sint velit consequat ex. Minim
-        reprehenderit est mollit minim. Consequat id veniam esse id proident id
-        non est. Esse anim labore dolore mollit adipisicing. Eiusmod pariatur
-        pariatur aliqua et consectetur officia sunt ea. Laboris irure culpa
-        incididunt aliquip. Aliqua duis nostrud consequat ipsum. In commodo amet
-        laborum duis consequat. Sint amet ullamco proident in sit. Cupidatat
-        elit consectetur sint dolor esse velit anim. Lorem ea culpa irure
-        nostrud fugiat. Ullamco velit nulla esse dolore. Quis deserunt ex ipsum
-        duis incididunt. Magna do aute ea incididunt eu. Aute ad ea et laborum
-        pariatur cillum nisi. Esse non ut ex veniam. Nulla eu magna Lorem labore
-        dolore consequat.
-        <p>
-          Voluptate nisi eu voluptate eu ipsum laboris. Dolore eu ut labore id
-          dolor aute. Consectetur magna eu duis nisi. Cillum commodo do eu
-          mollit. Deserunt consequat officia minim amet non nisi dolore. Anim
-          enim fugiat ut minim reprehenderit. Laboris non ex deserunt ea
-          occaecat ut nisi eiusmod tempor. Quis ipsum nostrud adipisicing duis
-          nulla exercitation eu officia veniam. Lorem reprehenderit proident
-          laboris id sunt consequat officia adipisicing. Cupidatat deserunt
-          occaecat eiusmod anim eu. Ullamco exercitation nisi aliquip quis est
-          ea aute enim. Non ex qui excepteur magna commodo fugiat. Do id
-          voluptate cupidatat deserunt. Et excepteur consequat consequat cillum
-          ex id dolor nulla. Esse reprehenderit ullamco deserunt ipsum
-          consequat. Cupidatat ea reprehenderit ea aute consectetur aliquip
-          fugiat. Cillum officia excepteur excepteur commodo occaecat in culpa
-          sunt quis. Ea quis ex ea sint aliquip. Velit nisi Lorem qui minim
-          incididunt cupidatat occaecat consequat eiusmod. Est elit ea pariatur
-          aliquip nisi duis enim. Velit qui irure veniam ea dolore veniam ex
-          anim. Nisi pariatur commodo proident cillum commodo dolor. Officia
-          laborum commodo est amet magna sit non Lorem aliqua. Aliquip officia
-          nulla tempor labore excepteur labore. Eu ut irure non dolore qui
-          labore. Culpa adipisicing enim incididunt occaecat occaecat eiusmod ut
-          ut. Nulla non officia magna deserunt excepteur ad consequat ipsum
-          deserunt. Ex reprehenderit exercitation laborum quis adipisicing
-          dolor. Anim incididunt Lorem esse ea. Officia deserunt duis cillum
-          cupidatat eu officia laborum ea. Anim fugiat et labore aliqua
-          consequat nisi eiusmod pariatur dolor. Sit magna irure voluptate
-          magna. Ea velit sint aute do qui ut. Est culpa enim reprehenderit
-          incididunt esse. Magna duis minim ex labore laborum occaecat ut
-          ullamco. Deserunt aute ea non est amet. Elit ea anim amet aliqua non
-          anim aute do enim. In aute consectetur deserunt occaecat. Elit ex ex
-          eu commodo ea esse. Voluptate amet laborum laborum ea tempor. Tempor
-          ea pariatur mollit exercitation non reprehenderit pariatur quis enim.
-          Irure cillum aliqua labore elit. Exercitation adipisicing qui irure
-          ea. Enim sit ad nostrud Lorem non officia elit ex tempor. Excepteur
-          minim consectetur quis duis. Irure ut labore mollit sint adipisicing
-          occaecat elit labore eiusmod. Esse exercitation consectetur pariatur
-          non excepteur. Proident ullamco nisi dolore enim. Non pariatur aliquip
-          velit do ad. Incididunt do ullamco sint id. Veniam irure et occaecat
-          exercitation eu aute nulla pariatur incididunt. Cupidatat ullamco do
-          duis magna duis. Fugiat exercitation amet non irure. Consectetur ad ex
-          veniam ex aliquip proident proident veniam. Commodo esse eu
-          consectetur adipisicing cupidatat. Cupidatat ex aliquip laboris duis
-          Lorem nostrud anim. Non voluptate mollit sunt deserunt ipsum tempor
-          eiusmod do. Pariatur nisi et eiusmod amet ut. Adipisicing labore
-          incididunt in aliquip in ex minim cupidatat nulla. Qui do do dolore
-          commodo incididunt pariatur laborum. Duis deserunt voluptate aute sunt
-          duis. Exercitation sint consequat duis amet nisi. Aliqua commodo irure
-          cillum consectetur ipsum proident velit cupidatat non. Do
-          reprehenderit cupidatat et consectetur velit incididunt consectetur
-          nisi voluptate. Ea reprehenderit enim nulla esse nostrud nulla.
-          Commodo occaecat incididunt irure aliquip aliquip exercitation
-          exercitation deserunt. Veniam Lorem minim cillum ex excepteur tempor.
-          Ad qui id proident proident nostrud aliqua voluptate. Ad proident do
-          irure aliquip amet. Pariatur veniam culpa incididunt fugiat ex
-          exercitation id. Aliqua cillum sit veniam veniam. Ut non consequat
-          laborum esse. Sit tempor aliqua irure ex aliqua dolore et in sit.
-        </p>
+        <div className={classes.subheadText}>
+          ประเมินดัชนีมวลกล้ามเนื้อสำหรับเด็กด้วยแรงบีบมือ
+        </div>
+        เป็นโปรแกรมที่ถูกสร้างขึ้นสำหรับใช้ในบริบทของโรงเรียนระดับประถมศึกษาและมัธยมศึกษาตอนต้น
+        ที่มีเด็กนักเรียนชายหญิงอายุระหว่าง 5-16 ปี
+        เพื่อใช้ในการประเมินปริมาณกล้ามเนื้อในร่างกายของเด็ก
+        โดยอาศัยเพียงการวัดค่าแรงบีบมือ นอกเหนือจากค่าน้ำหนักและส่วนสูง
+        โปรแกรมจะคำนวณค่าดัชนีมวลกายและดัชนีมวลกล้ามเนื้อ
+        ทำให้ทราบลักษณะองค์ประกอบทางกายภาพของเด็กแต่ละคน
+        การทราบค่าดัชชีมวลกายจะสามารถบ่งบอกถึงปริมาณมวลไขมันในร่างกาย
+        การทราบค่าดัชนีมวลกล้ามเนื้อจะสามารถบ่งบอกถึงปริมาณมวลกล้ามเนื้อในร่างกาย
+        การทราบค่าดัชนีทั้งสอง
+        ทำให้สามารถให้คำแนะนำเพื่อการส่งเสริมสุขภาพเบื้องต้น
+        เพื่อให้มีสุขภาพทางกายที่ดี ที่เหมาะสมกับเด็กรายบุคคล
+        การให้คำแนะนำด้านอาหาร
+        ด้านกิจกรรมทางกายและชนิดการออกกำลังกายที่เหมาะสมจะแตกต่างกันไปในเด็กแต่ละราย
+        ทำให้สามารถการติดตามการเปลี่ยนแปลงระดับมวลกล้ามเนื้อในระยะยาว
+        เพื่อใช้ในการส่งเสริมการสร้างมวลกล้ามเนื้อ
+        และรักษาระดับมวลกล้ามเนื้อให้มีค่าคงที่ในเด็ก
+        <br />
+        <br />
+        <div className={classes.headText}>หลักการและเหตุผล</div>
+        <ul>
+          <li>
+            โรงเรียนทุกแห่งจะมีการเฝ้าระวังและติดตามสุขภาพทางกายของเด็กนักเรียนเป็นประจำทุกปี
+            โดยอาศัยการชั่งน้ำหนักตัว (กิโลกรัม) วัดส่วนสูง (เซนติเมตร)
+            และคำนวณเป็นค่าดัชนีมวลกาย หรือน้ำหนักตัวที่ปรับด้วยค่าความสูง
+            (กิโลกรัม/(เซนติเมตร/100)2)
+            เพื่อใช้บ่งบอกถึงระดับการเจริญเติบโตและสภาวะโภชนาการของเด็กแต่ละคน{" "}
+          </li>
+          <li>
+            ระดับโภชนาการของเด็กแต่ละคนจะใช้ที่ค่าดัชนีมวลกาย Z score (Body Mass
+            Index, BMI Z score) โดยใช้การแปลผลดังนี้
+            <ul>
+              <li>น้อยกว่า -2: ผอม</li>
+              <li>o ระหว่าง -2 ถึง 1: ปกติ</li>
+              <li>o มากกว่า 1: น้ำหนักเกิน, อ้วน</li>
+            </ul>
+          </li>
+          <li>
+            น้ำหนักตัว ส่วนสูง ดัชนีมวลกาย
+            จะมีการเปลี่ยนแปลงเมื่อเด็กเจริญโตเข้าสู่วัยผู้ใหญ่
+            แพทย์จะใช้น้ำหนักและส่วนสูงเพื่อติดตามการเจริญเติบโต
+            เฝ้าระวังภาวะทุโภชนาการของเด็ก
+          </li>
+          <li>
+            ดัชนีมวลกายไม่เพียงพอที่จะติดตามการเจริญเติบโตของเด็ก
+            เนื่องจากองค์ประกอบของร่างกาย สัดส่วนของมวลไขมันและมวลกล้ามเนื้อ
+            ก็มีการเปลี่ยนแปลงเช่นกันเมื่อเด็กเจริญโตเข้าสู่วัยผู้ใหญ่
+          </li>
+          <li>
+            น้ำหนักตัวเกิดจากองค์ประกอบของร่างกาย
+            ซึ่งประกอบด้วยมวลไขมันและมวลปราศจากไขมัน
+            มวลกล้ามเนื้อคือองค์ประกอบหลักของมวลปราศจากไขมัน
+            เด็กผอมหรือเด็กที่มีดัชนีมวลกายต่ำจะมีการลดลงของทั้งมวลไขมันและมวลกล้ามเนื้อ
+            ในเด็กอ้วนหรือเด็กที่มีดัชนีมวลกายสูง
+            จะมีความหลากหลายขององค์ประกอบร่างกาย จะมีการเพิ่มขึ้นมวลไขมัน
+            แต่มวลกล้ามเนื้อกลับมีความหลากหลาย โดยอาจมีค่าลดลง เป็นปกติ
+            หรือมากกว่าปกติ
+          </li>
+          <li>
+            กล้ามเนื้อลายคือเนื้อเยื่อหลักของร่างกาย
+            ทำหน้าที่หลักหลากหลายประการได้แก่
+            หน้าที่ด้านการเคลื่อนไหวกล้ามเนื้อลายหดและคลายตัวเพื่อเกิดการเคลื่อนไหว
+            กล้ามเนื้อลายจะเปลี่ยนพลังงานเคมีจากสารอาหารเป็นพลังงานกลในรูปของแรง
+            แรงทำให้กระดูกและข้อเกิดการเคลื่อนไหว
+            แรงที่กระทำต่อน้ำหนักตัวผ่านข้อต่อและกระดูกจะแสดงออกมาในรูปของสมรรถนะทางกาย
+            ได้แก่ ความแข็งแรง พละกำลัง ความคล่องแคล่วว่องไว ความอดทน
+            และความสามารถในการเคลื่อนไหว หน้าที่ควบคุมการใช้พลังงานของร่างกาย
+            กล้ามเนื้อลายความคุมระดับของพลังงานของร่างกาย
+            โดยเก็บน้ำตาลเข้าสู่กล้ามเนื้อหลังมืออาหาร
+            ควบคุมระดับน้ำตาลและสลายพลังงานจากเนื้อเยื่อไขมันเพื่อเป็นแหล่งพลังงานใช้ในการเคลื่อนไหวในระยะอดอาหารหรือการใช้พลังงานต่อเนื่องเวลานาน
+            หน้าที่ควบคุมอุณหภูมิของร่างกายให้คงที่
+            ในสภาวะปกติกล้ามเนื้อลายจะสลายพลังงานตลอดเวลาเพื่อควบคุมอุณหภูมิของร่างกายให้คงที่
+          </li>
+          <li>
+            ปริมาณกล้ามเนื้อลายจึงสัมพันธ์กับการควบคุมน้ำหนักตัว
+            หรือปริมาณมวลไขมัน
+            ปริมาณมวลกล้ามเนื้อที่มากจะทำให้สุภาพทางกายและสมรรถนะทางกายที่ดี
+            ปริมาณมวลกล้ามเนื้อที่น้อยและปริมาณมวลไขมันที่มากจึงสัมพันธ์กับความเจ็บป่วยจากโรคไม่ติดต่อเรื้อรัง
+          </li>
+          <li>
+            กล้ามเนื้อลายคือเนื้อเยื่อหลักของร่างกาย
+            ทำหน้าที่หลักหลากหลายประการได้แก่
+            หน้าที่ด้านการเคลื่อนไหวกล้ามเนื้อลายหดและคลายตัวเพื่อเกิดการเคลื่อนไหว
+            กล้ามเนื้อลายจะเปลี่ยนพลังงานเคมีจากสารอาหารเป็นพลังงานกลในรูปของแรง
+            แรงทำให้กระดูกและข้อเกิดการเคลื่อนไหว
+            แรงที่กระทำต่อน้ำหนักตัวผ่านข้อต่อและกระดูกจะแสดงออกมาในรูปของสมรรถนะทางกาย
+            ได้แก่ ความแข็งแรง พละกำลัง ความคล่องแคล่วว่องไว ความอดทน
+            และความสามารถในการเคลื่อนไหว หน้าที่ควบคุมการใช้พลังงานของร่างกาย
+            กล้ามเนื้อลายความคุมระดับของพลังงานของร่างกาย
+            โดยเก็บน้ำตาลเข้าสู่กล้ามเนื้อหลังมืออาหาร
+            ควบคุมระดับน้ำตาลและสลายพลังงานจากเนื้อเยื่อไขมันเพื่อเป็นแหล่งพลังงานใช้ในการเคลื่อนไหวในระยะอดอาหารหรือการใช้พลังงานต่อเนื่องเวลานาน
+            หน้าที่ควบคุมอุณหภูมิของร่างกายให้คงที่
+            ในสภาวะปกติกล้ามเนื้อลายจะสลายพลังงานตลอดเวลาเพื่อควบคุมอุณหภูมิของร่างกายให้คงที่
+          </li>
+          <li>
+            มวลกล้ามเนื้อจะมีค่ามากขี้นเมื่ออายุมากขึ้น
+            ในเพศชายจะมีมวลกล้ามเนื้อมากกว่าเพศหญิง
+            การเปลี่ยนแปลงจะเห็นชัดเมื่อเข้าสู่วัยรุ่น
+            มวลกล้ามเนื้อจะมีค่าสูงสุดในวัยผู้ใหญ่และคงที่ระหว่างอายุ 19-40 ปี
+            การถอดถอยหรือการเสื่อมสลายของกล้ามเนื้อตามวัยจะเกิดขึ้นเมื่ออายุมากกว่า
+            40 ปี โดยมวลกล้ามเนื้อจะค่อยลดลง
+            และลดลงอย่างรวดเร็วเมื่อเข้าภาวะสูงวัย
+          </li>
+          <li>
+            เด็ก ผู้ใหญ่ ผู้สูงวัย ที่มีระดับโภชนาการ
+            ระดับของกิจกรรมทางกายระดับปานกลางถึงหนัก และการนอนหลับที่ไม่เพียงพอ
+            หรือในระดับต่ำ จะมีมวลกล้ามเนื้อในระดับต่ำ เป็นผลจากการสร้างลดลง
+            การบำรุงรักษาลดลง และมีการเสื่อมสลายของมวลกล้ามเนื้อ
+          </li>
+          <li>
+            การวัดและการเปรียบเทียบมวลกล้ามเนื้อจะใช้ค่า ดัชนีมวลกล้ามเนื้อ
+            ซึ่งคือน้ำหนักมวลกล้ามเนื้อปรับค่าด้วยค่าความสูง
+            (กิโลกรัม/(เซนติเมตร/100)2) ค่าระดับกล้ามเนื้อของแต่ละคน
+            สามารถเปรียบเทียบกันได้
+          </li>
+          <li>
+            ภาวะมวลกล้ามเนื้อน้อย คือภาวะที่ดัชนีมวลกล้ามเนื้อต่ำกว่าค่ามาตราฐาน
+            ซึ่งคือต่ำกว่า
+            ค่าเฉลี่ยของดัชนีมวลกล้ามเนื้อในเด็กที่มีอายุและเพศเดียวกันมากกว่าสองเท่าของค่าเบี่ยงเบนมาตราฐาน
+            ( ต่ำกว่า ค่าเฉลี่ย-2 เท่าค่าเบี่ยงเบนมาตราฐาน)
+          </li>
+          <li>
+            สังคมไทยได้เข้าสู่สังคมสูงวัย ผู้สูงวัยที่มีคุณภาพชีวิตที่ดี
+            จะมีสุขภาพดี ไม่มีโรคไม่ติดต่อเรื้อรัง
+            และคงความสามารถด้านการเคลื่อนไหวอย่างเป็นอิสระและลดการพึ่งพาจากคนรอบข้าง
+            การมีคุณภาพชีวิตที่ดีในช่วงสูงวัยจะมีความสัมพันธ์กับปริมาณมวลไขมันในระดับต่ำ
+            และ ปริมาณมวลกล้ามเนื้อระดับปกติหรือสูงกว่าปกติ
+            การเสริมสร้างปริมาณกล้ามเนื้อ
+            บำรุงรักษาระดับกล้ามเนื้อและการชะลอภาวะเสื่อมถอยของกล้ามเนื้อจึงเป็นแนวทางหลักในการเสริมสร้างสุขภาพที่ดีตลอดช่วงชีวิต
+            จากวัยเด็กสู่ช่วงสูงวัย
+          </li>
+          <li>
+            ในวัยเด็ก
+            เด็กควรได้รับการสนับสนุนให้มีการเพิ่มปริมาณกล้ามเนื้อให้มีปริมาณที่มากในระดับสูงสุดเพื่อเข้าสู่วัยผู้ใหญ่
+            ในช่วงวัยผู้ใหญ่ควรบำรุงรักษาระดับกล้ามเนื้อให้มีระดับคงที่
+            และควรชะลอภาวะเสื่อมถอยของกล้ามเนื้อให้ช้าที่สุดเมื่อเข้าสู่ระยะสูงวัย
+          </li>
+          <li>
+            การสนับสนุนให้มีการเพิ่มปริมาณกล้ามเนื้อให้มีปริมาณที่มากในระดับสูงสุดในเด็ก
+            ภายใต้สภาวะแวดล้อมที่บ้าน โรงเรียนและการดูแลของผู้ปกครอง
+            ครูที่เหมาะสม ทำได้โดยการได้รับโภชนาการเพียงพอ
+            การมีระดับของกิจกรรมทางกายระดับปานกลางถึงหนัก
+            และการพักผ่อนนอนหลับที่เพียงพอ
+            การออกกำลังกายชนิดออกแรงต้านของกล้ามเนื้อ
+            บริเวณกลางลำตัวและแขนขาจะช่วยในการเสริมสร้างมวลกล้ามเนื้อให้มีปริมาณและมีความแข็งแรง
+            ส่วนการออกกำลังกายชนิดแอโรบิคจะช่วยในการใช้พลังงานของร่างกาย
+            ช่วยในการลดมวลไขมันในร่างกาย
+          </li>
+          <li>
+            การวัดมวลกล้ามเนื้อมีหลายวิธี วิธีมาตรฐานจะให้เทคนิคทางรังสี
+            เป็นการวัดวิธีเดียวกับการวัดมวลกระดูกซึ่งใช้ในทางการวิจัย
+            วิธีที่ง่ายในปัจจุบันคือ
+            การใช้เครื่องวิเคราะห์องค์ประกอบร่างกายหรือเครื่องวิเคราะห์อิมพีแดนซ์ของไฟฟ้าชีวภาพ
+            (Body Impedance Analysis) ซึ่งมีหลากหลายราคาหลายแบบ
+            แบ่งตามลักษณะการใช้งานซึ่งบ่งถึงระดับความน่าเชื่อถือและความแม่นยำ
+            ในเครื่องที่มีระดับความน่าเชื่อถือและความแม่นยำสูงที่ใช้ทางการแพทย์
+            เครื่องดังกล่าวยังมีราคาสูง และยังไม่สามารถเข้าถึงได้ในทุกที่
+          </li>
+          <li>
+            แรงบีบมือคือหนึ่งในองค์ประกอบของสมรรถภาพทางกายเพื่อสุขภาพ
+            เครื่องวัดแรงบีบมือ จึงเป็นอีกทางเลือกในการคำนวนหามวลกล้ามเนื้อ
+            โปรแกรมประเมินดัชนีมวลกล้ามเนื้อสำหรับเด็ก
+            ถูกสร้างเพื่อใช้สำหรับการคำนวณและให้คำแนะนำเบื้องต้นต่อ บุคคลทั่วไป
+            ผู้ปกครอง ครู แพทย์
+            ที่ต้องดูและเด็กและมีความจำเป็นต้องใช้ค่ามวลกล้ามเนื้อ
+            เพื่อเสริมสร้างสุขภาพที่ดี
+            ในกรณีที่ไม่สามารถเข้าถึงหรือไม่มีเครื่องวิเคราะห์องค์ประกอบร่างกาย
+            หรือเครื่องวิเคราะห์อิมพีแดนซ์ของไฟฟ้าชีวภาพ
+            การใช้ข้อมูลจากเครื่องวัดแรงบีบมือซึ่งมีราคาถูก พร้อมข้อมูล เพศ
+            ความสูงและน้ำหนักตัว สามารถนำมาใช้ในการคำนวณ
+            และสามารถทำนายค่ามวลกล้ามเนื้อ ดัชนีมวลกล้ามเนื้อได้
+          </li>
+          <li>
+            ประโยชน์ของการวัดระดับมวลกล้ามเนื้อคือ การทราบองค์ประกอบของร่างกาย
+            หรือสัดส่วนของมวลไขมันและมวลกล้ามเนื้อ
+            ที่ดัชนีมวลกายไม่สามารถให้คำตอบได้ ดัชนีมวลกายสามารถบอกได้ว่า
+            น้ำหนักตัวปกติ น้ำหนักตัวมาก หรือ น้ำหนักตัวน้อย
+            การวัดระดับมวลกล้ามเนื้อหรือดัชนีมวลกล้ามเนื้อสามารถบอกได้ว่ามวลกล้ามเนื้อปกติ
+            หรือมวลกล้ามเนื้อต่ำกว่าปกติ ทำให้สามรถแบ่งเด็กออกเป็นกลุ่มย่อย
+            สามารถให้คำแนะนำให้เหมาะสมมากขึ้น
+          </li>
+          <li>
+            คำแนะนำในเด็กที่มีน้ำหนักเกินหรืออ้วน อาหารควรมีปริมาณปกติ
+            แต่ลดสัดส่วนอาหารของแป้งและไขมัน
+            เพิ่มกิจกรรมทางกายและลดพฤติกรรมเนือยนิ่ง
+            การออกกำลังกายควรเป็นชนิดแอโรบิค
+          </li>
+          <li>
+            คำแนะนำในเด็กที่มีมวลกล้ามเนื้อต่ำกว่าปกติ ไม่ว่าน้ำหนักตัวปกติ
+            หรือมาก ควรเพิ่มสัดส่วนโปรตีนในอาหาร
+            นอกเหนือจากกิจกรรมทางกายตามคำแนะนำ
+            ควรเพิ่มการออกกำลังกายชนิดออกแรงต้านของกล้ามเนื้อ กลางลำตัวและแขนขา
+          </li>
+        </ul>
       </div>
     </>
   );

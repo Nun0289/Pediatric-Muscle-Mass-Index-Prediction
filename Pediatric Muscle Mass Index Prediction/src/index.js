@@ -25,7 +25,10 @@ ReactDOM.render(
           <Calculator />
         </Route>
       </Switch>
-      <div className="footer">something that i don't know</div>
+      <div className="footer">
+        by Faculty of Medicine, King Mongkut's Institute of Technology
+        Ladkrabang
+      </div>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

@@ -12,15 +12,20 @@ function results(gender, age, weight, height, gripstrength) {
     gripstrength
   );
   var musclemassindex = calMuscleMassIndex(wholemusclemass, height);
-  finalresult.bmi = bmi
-  finalresult.bmizscore = bmizscore
-  finalresult.wholemusclemass = wholemusclemass
-  finalresult.musclemassindex = musclemassindex
+  finalresult.bmi = bmi;
+  finalresult.bmizscore = bmizscore;
+  finalresult.wholemusclemass = wholemusclemass;
+  finalresult.musclemassindex = musclemassindex;
+  finalresult.gender = gender;
+  finalresult.age = age;
+  finalresult.weight = weight;
+  finalresult.height = height;
+  finalresult.gripstrength = gripstrength;
   resultMMI(musclemassindex, age, gender);
-  reusltZscore(bmizscore)
-  advice()
+  reusltZscore(bmizscore);
+  advice();
   console.log(finalresult);
-  return finalresult
+  return finalresult;
 }
 // หา BMI
 function calbmi(weight, height) {
@@ -28,7 +33,7 @@ function calbmi(weight, height) {
   return bmi;
 }
 // หา BMIZSCORE
-function calBMIZscore(gender, age, bmi) {
+function calBMIZscore(gender, age, weight) {
   if (gender == "male") {
     var lsmtable = men_LSM;
   } else {
@@ -36,7 +41,7 @@ function calBMIZscore(gender, age, bmi) {
   }
 
   var bmizscore =
-    ((bmi / lsmtable[age][2]) ** lsmtable[age][0] - 1) /
+    ((weight / lsmtable[age][2]) ** lsmtable[age][0] - 1) /
     (lsmtable[age][1] * lsmtable[age][0]);
   return bmizscore;
 }
@@ -158,7 +163,7 @@ function advice() {
       finalresult.food = "ควบคุมให้อยู่ในระดับปกติ";
       finalresult.physicalActivity =
         "ลดพฤติกรรมเนือยนิ่ง, กิจกรรมทางกายระดับปานกลางถึงหนัก ปกติตามคำแนะนำ";
-        finalresult.exercise = "-";
+      finalresult.exercise = "-";
     }
     if (finalresult.resultWeight == "น้ำหนักปกติ") {
       finalresult.food = "ปกติ สัดส่วนอาหารปกติ";
@@ -175,11 +180,10 @@ function advice() {
   }
   if (finalresult.mmiresult == "ต่ำกว่าปกติ") {
     if (finalresult.resultWeight == "น้ำหนักน้อย,ผอม") {
-      finalresult.food =
-        "ควบคุมให้อยู่ในระดับปกติ เพิ่มสัดส่วนโปรตีนในอาหาร";
+      finalresult.food = "ควบคุมให้อยู่ในระดับปกติ เพิ่มสัดส่วนโปรตีนในอาหาร";
       finalresult.physicalActivity =
         " ลดพฤติกรรมเนือยนิ่ง,กิจกรรมทางกายระดับปานกลางถึงหนักปกติ ตามคำแนะนำ";
-        finalresult.exercise = "-";
+      finalresult.exercise = "-";
     }
     if (finalresult.resultWeight == "น้ำหนักปกติ") {
       finalresult.food = "ปกติ เพิ่มสัดส่วนโปรตีนในอาหาร ";
