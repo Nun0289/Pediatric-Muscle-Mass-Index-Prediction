@@ -33,9 +33,9 @@
 /* secondSection */
 .secondSection {
   min-height: calc(200vh + 64px);
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 .secondContent {
   display: flex;
@@ -100,13 +100,28 @@
 }
 /* third section end here */
 .footer {
-  height: 5vh;
   background-color: rgb(49, 49, 49);
   color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 .titleCalc {
   text-align: center;
+}
+
+
+.startButton {
+  font-size:  25px !important;
+}
+@media only screen and (max-width: 800px) {
+  h2, h3{
+    text-align: center;
+  }
+  
+  .startButton{
+    font-size: 15px !important;
+  }
+  .toAboutButton{
+    display: flex;
+    justify-content: center;
+  }
 }

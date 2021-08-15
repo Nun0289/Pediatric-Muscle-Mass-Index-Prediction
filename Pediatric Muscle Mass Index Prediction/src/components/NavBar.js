@@ -6,6 +6,12 @@ import { Link, useLocation } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import { useScrollSection } from "react-scroll-section";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import { useState, createRef } from "react";
+import { Hidden } from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -19,15 +25,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 const NavBar = () => {
+  const [anchorEl, setAnchorEl] = useState(null);
   const location = useLocation();
-  console.log(location);
   const classes = useStyles();
+  const open = Boolean(anchorEl);
   const homeSection = useScrollSection("home");
   const aboutSection = useScrollSection("about");
   const calcSection = useScrollSection("calc");
   const clickHandler = () => {
     homeSection.onClick();
     console.log(homeSection);
+  };
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   const BackNavBar = () => {
@@ -41,6 +56,75 @@ const NavBar = () => {
     );
   };
 
+  const MenuButton = () => {
+    return (
+      <div>
+        <Button
+          id="menu-button-toggle"
+          aria-controls="simple-menu"
+          aria-haspopup="true"
+          onClick={handleClick}
+        >
+          <MenuIcon />
+        </Button>
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          anchorOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+          open={open}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={handleClose}>
+            <Button
+              onClick={clickHandler}
+              selected={homeSection.selected}
+              style={
+                homeSection.selected
+                  ? { backgroundColor: "orange" }
+                  : { backgroundColor: "white" }
+              }
+            >
+              หน้าแรก
+            </Button>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Button
+              onClick={aboutSection.onClick}
+              style={
+                aboutSection.selected
+                  ? { backgroundColor: "orange" }
+                  : { backgroundColor: "white" }
+              }
+            >
+              เกี่ยวกับ
+            </Button>
+          </MenuItem>
+          <MenuItem onClick={handleClose}>
+            <Button
+              onClick={calcSection.onClick}
+              selected={calcSection.selected}
+              style={
+                calcSection.selected
+                  ? { backgroundColor: "orange" }
+                  : { backgroundColor: "white" }
+              }
+            >
+              โปรแกรมคำนวณ
+            </Button>
+          </MenuItem>
+        </Menu>
+      </div>
+    );
+  };
+
   const SectionSlide = () => {
     return (
       <>
@@ -50,42 +134,43 @@ const NavBar = () => {
           </Button>
         </Typography>
         <div>
-          <Button
-            onClick={clickHandler}
-            selected={homeSection.selected}
-            style={
-              homeSection.selected
-                ? { backgroundColor: "orange" }
-                : { backgroundColor: "white" }
-            }
-          >
-            หน้าแรก
-          </Button>
-          <Button
-            onClick={aboutSection.onClick}
-            style={
-              aboutSection.selected
-                ? { backgroundColor: "orange" }
-                : { backgroundColor: "white" }
-            }
-          >
-            เกี่ยวกับ
-          </Button>
-          <Button
-            // component={NavLink}
-            // activeStyle={{ backgroundColor: "orange", color: "white" }}
-            // exact
-            // to="/calc"
-            onClick={calcSection.onClick}
-            selected={calcSection.selected}
-            style={
-              calcSection.selected
-                ? { backgroundColor: "orange" }
-                : { backgroundColor: "white" }
-            }
-          >
-            โปรแกรมคำนวณ
-          </Button>
+          <Hidden xsDown>
+            <Button
+              onClick={clickHandler}
+              selected={homeSection.selected}
+              style={
+                homeSection.selected
+                  ? { backgroundColor: "orange" }
+                  : { backgroundColor: "white" }
+              }
+            >
+              หน้าแรก
+            </Button>
+            <Button
+              onClick={aboutSection.onClick}
+              style={
+                aboutSection.selected
+                  ? { backgroundColor: "orange" }
+                  : { backgroundColor: "white" }
+              }
+            >
+              เกี่ยวกับ
+            </Button>
+            <Button
+              onClick={calcSection.onClick}
+              selected={calcSection.selected}
+              style={
+                calcSection.selected
+                  ? { backgroundColor: "orange" }
+                  : { backgroundColor: "white" }
+              }
+            >
+              โปรแกรมคำนวณ
+            </Button>
+          </Hidden>
+          <Hidden smUp>
+            <MenuButton />
+          </Hidden>
         </div>
       </>
     );
