@@ -93,16 +93,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const createAndDownloadPDF = (
-  NAME,
-  AGE,
-  HEIGHT,
-  BMI,
-  BMIZSCORE,
-  MUSCLE_INDEX
-) => {
+const createAndDownloadPDF = (bmizscore, resultWeight, musclemassindex, resultMuscle, mmiresult, food, physicalActivity, exercise, gender, age, weight, height, gripstrength, bmi) => {
   axios
-    .post("/create-pdf", { NAME, AGE, HEIGHT, BMI, BMIZSCORE, MUSCLE_INDEX })
+    .post("/create-pdf", {bmizscore, resultWeight, musclemassindex, resultMuscle, mmiresult, food, physicalActivity, exercise, gender, age, weight, height, gripstrength, bmi})
 
     .then(() => axios.get("fetch-pdf", { responseType: "blob" }))
     .then((res) => {
@@ -261,7 +254,7 @@ const Calculator = () => {
             color="primary"
             variant="contained"
             // onClick={() => createAndDownloadPDF(name)}
-            onClick={() => createAndDownloadPDF()}
+            onClick={() => createAndDownloadPDF(userResult.bmizscore, userResult.resultWeight, userResult.musclemassindex, userResult.resultMuscle, userResult.mmiresult, userResult.food, userResult.physicalActivity, userResult.exercise, userResult.gender, userResult.age, userResult.weight, userResult.height, userResult.gripstrength, userResult.bmi)}
           >
             บันทึกผล
           </Button>
