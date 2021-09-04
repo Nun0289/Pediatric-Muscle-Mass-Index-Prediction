@@ -146,7 +146,7 @@ const Home = () => {
                   alignItems="center"
                   style={{ minHeight: "100vh" }}
                 >
-                  <Grid xs={12} md={7} item style={{ padding: "2em" }}>
+                  <Grid xs={12} md={7} item style={{ padding: "2em",fontFamily: "Kanit", }}>
                     <h3> สถานการณ์ปัจจุบัน </h3>
                     <p>
                       โรงเรียนทุกแห่งจะมีการเฝ้าระวังและติดตามสุขภาพทางกายของเด็กนักเรียนเป็นประจำทุกปี
@@ -264,12 +264,12 @@ const Home = () => {
             </Hidden>
             <div className="thirdSection">
               <div className="boxWhite">
-                <Container>
-                  <h1 style={{ textAlign: "center", paddingTop: 20 }}>
+                <Container >
+                  <h1 style={{ textAlign: "center", paddingTop: 20 ,}}>
                     โปรแกรมคำนวณ
                   </h1>
                   <FormControl margin="normal" className={classes.root}>
-                    <FormLabel>เพศ</FormLabel>
+                    <FormLabel style={{fontFamily: "Kanit",}}>เพศ</FormLabel>
                     <RadioGroup aria-label="gender" name="gender1">
                       <FormControlLabel
                         value="male"
@@ -277,7 +277,7 @@ const Home = () => {
                         checked={gender === "male"}
                         className={classes.labelRadio}
                         control={<Radio color="primary" />}
-                        label="ชาย"
+                        label={<div style={{fontFamily: "Kanit",}} >ชาย</div>}
                       />
                       <FormControlLabel
                         value="female"
@@ -285,10 +285,10 @@ const Home = () => {
                         checked={gender === "female"}
                         className={classes.labelRadio}
                         control={<Radio color="primary" />}
-                        label="หญิง"
+                        label={<div style={{fontFamily: "Kanit",}} >หญิง</div>}
                       />
                     </RadioGroup>
-                    <FormLabel style={{ paddingBottom: 10 }}>อายุ</FormLabel>
+                    <FormLabel style={{ paddingBottom: 10,fontFamily: "Kanit" }}>อายุ</FormLabel>
                     <TextField
                       name="age"
                       value={age}
@@ -296,13 +296,15 @@ const Home = () => {
                       className={classes.textField}
                       InputProps={{
                         endAdornment: (
-                          <InputAdornment position="end">ปี</InputAdornment>
+                          <InputAdornment position="end" style={{fontFamily: "Kanit",}}> 
+                          <div style={{fontFamily: "Kanit"}}>ปี</div>
+                          </InputAdornment>
                         ),
                       }}
                       variant="outlined"
                       fullWidth
                     />
-                    <FormLabel style={{ paddingBottom: 10 }}>ส่วนสูง</FormLabel>
+                    <FormLabel style={{ paddingBottom: 10 ,fontFamily: "Kanit"}}>ส่วนสูง</FormLabel>
                     <TextField
                       value={height}
                       onChange={(e) => setHeight(e.target.value)}
@@ -310,14 +312,14 @@ const Home = () => {
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">
-                            เซนติเมตร
+                            <div style={{fontFamily: "Kanit"}}>เซนติเมตร</div>
                           </InputAdornment>
                         ),
                       }}
                       variant="outlined"
                       fullWidth
                     />
-                    <FormLabel style={{ paddingBottom: 10 }}>น้ำหนัก</FormLabel>
+                    <FormLabel style={{ paddingBottom: 10,fontFamily: "Kanit" }}>น้ำหนัก</FormLabel>
                     <TextField
                       value={weight}
                       onChange={(e) => setWeight(e.target.value)}
@@ -325,15 +327,15 @@ const Home = () => {
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end" >
-                            กิโลกรัม
+                            <div style={{fontFamily: "Kanit"}}>กิโลกรัม</div>
                           </InputAdornment>
                         ),
                       }}
                       variant="outlined"
                       fullWidth
                     />
-                    <FormLabel style={{ paddingBottom: 10 }}>
-                      เเรงบีบมือ
+                    <FormLabel style={{ paddingBottom: 10 ,fontFamily: "Kanit"}}>
+                      เเรงบีบมือ (optional)
                     </FormLabel>
                     <TextField
                       value={gripstrength}
@@ -341,8 +343,9 @@ const Home = () => {
                       className={classes.textField}
                       InputProps={{
                         endAdornment: (
-                          <InputAdornment position="end">
-                            กิโลกรัม
+                          <InputAdornment position="end" > 
+                          <div style={{fontFamily: "Kanit"}}>กิโลกรัม</div>
+                            
                           </InputAdornment>
                         ),
                       }}
@@ -351,7 +354,7 @@ const Home = () => {
                     />
                     <div style={{ paddingBottom: 10, width: "100%" }}>
                       <Button
-                        style={{ width: "100%" }}
+                        style={{ width: "100%",fontFamily: "Kanit" }}
                         color="primary"
                         variant="contained"
                         onClick={() => onSubmit()}
