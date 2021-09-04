@@ -14,9 +14,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import backgroundImage from '../img/background polygon.png'
 const useStyles = makeStyles((theme) => ({
   container: {
     padding: 60,
+    background: `url('${backgroundImage}')`,
+    backgroundColor: 'white'
   },
   headText: {
     fontSize: "2em",
@@ -272,53 +275,53 @@ const About = () => {
           </Grid>
         </Hidden>
         <TableContainer component={Paper}>
-      <Table  aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="center">เพศ</TableCell>
-            <TableCell align="center">วัย</TableCell>
-            <TableCell align="center">มวลกล้ามเนื้อ</TableCell>
-            <TableCell align="center">ดัชนีมวลกล้ามเนื้อ</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-            <TableRow>
-              <TableCell align="center">ชาย</TableCell>
-              <TableCell align="center">เด็ก</TableCell>
-              <TableCell align="center">78.25%</TableCell>
-              <TableCell align="center">12.19</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell align="center">หญิง</TableCell>
-              <TableCell align="center">เด็ก</TableCell>
-              <TableCell align="center">76.20%</TableCell>
-              <TableCell align="center">12.33</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell align="center">ชาย</TableCell>
-              <TableCell align="center">วัยรุ่น</TableCell>
-              <TableCell align="center">79.26%</TableCell>
-              <TableCell align="center">15.60</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell align="center">หญิง</TableCell>
-              <TableCell align="center">วัยรุ่น</TableCell>
-              <TableCell align="center">66.93%</TableCell>
-              <TableCell align="center">13.66</TableCell>
-            </TableRow>
-        </TableBody>
-      </Table>
-    </TableContainer>
-    <Grid item xs={12} md={6} style={{ margin: "1em" }}>
+          <Table aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell align="center">เพศ</TableCell>
+                <TableCell align="center">วัย</TableCell>
+                <TableCell align="center">มวลกล้ามเนื้อ</TableCell>
+                <TableCell align="center">ดัชนีมวลกล้ามเนื้อ</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCell align="center">ชาย</TableCell>
+                <TableCell align="center">เด็ก</TableCell>
+                <TableCell align="center">78.25%</TableCell>
+                <TableCell align="center">12.19</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell align="center">หญิง</TableCell>
+                <TableCell align="center">เด็ก</TableCell>
+                <TableCell align="center">76.20%</TableCell>
+                <TableCell align="center">12.33</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell align="center">ชาย</TableCell>
+                <TableCell align="center">วัยรุ่น</TableCell>
+                <TableCell align="center">79.26%</TableCell>
+                <TableCell align="center">15.60</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell align="center">หญิง</TableCell>
+                <TableCell align="center">วัยรุ่น</TableCell>
+                <TableCell align="center">66.93%</TableCell>
+                <TableCell align="center">13.66</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+        <Grid item xs={12} md={6} style={{ margin: "1em" }}>
           <ul>
             <li>
-            น้ำหนักตัวของร่างกายประกอบขึ้นจาก มวลไขมันและมวลปราศจากไขมัน มวลกล้ามเนื้อเป็นองค์ประกอบส่วนใหญ่ของมวลปราศจากไขมัน และมวลอื่น ๆเช่น กระดูก เอ็น เนื้อเยื่ออื่น
+              น้ำหนักตัวของร่างกายประกอบขึ้นจาก มวลไขมันและมวลปราศจากไขมัน มวลกล้ามเนื้อเป็นองค์ประกอบส่วนใหญ่ของมวลปราศจากไขมัน และมวลอื่น ๆเช่น กระดูก เอ็น เนื้อเยื่ออื่น
             </li>
             <li>
-            น้ำหนักตัวและส่วนสูงจะมีการเปลี่ยนแปลงมากขึ้นจากเด็กไปผู้ใหญ่ เป็นผลจากการเจริญเติบโต
+              น้ำหนักตัวและส่วนสูงจะมีการเปลี่ยนแปลงมากขึ้นจากเด็กไปผู้ใหญ่ เป็นผลจากการเจริญเติบโต
             </li>
             <li>
-            องค์ประกอบของร่างกาย
+              องค์ประกอบของร่างกาย
               <ul>
                 <li>น้ำหนักมวลกล้ามเนื้อต่อน้ำหนักตัวประมาณ 78.25 เปอร์เซ็นต์ในเด็กชายอายุ 5-7 ปี คงที่เข้าสู่วัยรุ่นประมาณ 79.26 เปอร์เซ็นต์ในผู้ชาย</li>
                 <li>น้ำหนักมวลกล้ามเนื้อต่อน้ำหนักตัวประมาณ 76.25) เปอร์เซ็นต์ในเด็กหญิงอายุ 5-7 ปี ลดลงเหลือประมาณ 66.93 เปอร์เซ็นต์ในผู้หญิง</li>
@@ -337,7 +340,7 @@ const About = () => {
         </Hidden>
         <Grid xs={12} md={7} item style={{ padding: "2em" }}>
           <div className={classes.subheadText}>
-          ดัชนีมวลกายต่ำ และ ดัชนีมวลกายสูง
+            ดัชนีมวลกายต่ำ และ ดัชนีมวลกายสูง
           </div>
         </Grid>
         <Hidden only="xs">
@@ -346,28 +349,28 @@ const About = () => {
           </Grid>
         </Hidden>
         <TableContainer component={Paper}>
-      <Table  aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="center">ดัชนีมวลกายต่ำหรือผอม: มวลกล้ามเนื้อต่ำและมวลไขมันต่ำ</TableCell>
-            <TableCell align="center">ดัชนีมวลกายสูงหรืออ้วน: มวลกล้ามเนื้อต่ำ ปกติ สูงและมวลไขมันสูง</TableCell>
-          </TableRow>
-        </TableHead>
-      </Table>
-    </TableContainer>
-    <Grid item xs={12} md={6} style={{ margin: "1em" }}>
+          <Table aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell align="center">ดัชนีมวลกายต่ำหรือผอม: มวลกล้ามเนื้อต่ำและมวลไขมันต่ำ</TableCell>
+                <TableCell align="center">ดัชนีมวลกายสูงหรืออ้วน: มวลกล้ามเนื้อต่ำ ปกติ สูงและมวลไขมันสูง</TableCell>
+              </TableRow>
+            </TableHead>
+          </Table>
+        </TableContainer>
+        <Grid item xs={12} md={6} style={{ margin: "1em" }}>
           <ul>
             <li>
-            ดัชนีมวลกายคือ ค่าน้ำหนักตัวปรับด้วยค่าความสูง หรือ น้ำหนักตัว/ความสูง<sup>2</sup> กิโลกรัม/เมตร<sup>2</sup>
+              ดัชนีมวลกายคือ ค่าน้ำหนักตัวปรับด้วยค่าความสูง หรือ น้ำหนักตัว/ความสูง<sup>2</sup> กิโลกรัม/เมตร<sup>2</sup>
             </li>
             <li>
-            ดัชนีมวลกายถูกใช้ในผู้ใหญ่เพื่อบ่งถึงภาวะผอมและอ้วน เนื่องจากความสูงผู้ใหญ่มีค่าคงที่ 
+              ดัชนีมวลกายถูกใช้ในผู้ใหญ่เพื่อบ่งถึงภาวะผอมและอ้วน เนื่องจากความสูงผู้ใหญ่มีค่าคงที่
             </li>
             <li>
-            การใช้ดัชนีมวลกายในเด็กมีข้อยุ่งยากและข้อจำกัด น้ำหนักตัวและส่วนสูงของเด็กจะมีการเปลี่ยนแปลงตลอดเวลาซึ่งเป็นผลจากการเจริญเติบโต โดยจะมีค่ามากขึ้นจากเด็กไปผู้ใหญ่ การเพิ่มขึ้นหรือลดลงอาจเป็นผลจากการเปลี่ยนแปลงของค่าน้ำหนักตัวหรือความสูง การแปลผลจึงต้องเปรียบเทียบกับค่าดัชนีมวลกายของเด็กที่มีอายุและเพศเดียวกัน หรือ BMI Z score
+              การใช้ดัชนีมวลกายในเด็กมีข้อยุ่งยากและข้อจำกัด น้ำหนักตัวและส่วนสูงของเด็กจะมีการเปลี่ยนแปลงตลอดเวลาซึ่งเป็นผลจากการเจริญเติบโต โดยจะมีค่ามากขึ้นจากเด็กไปผู้ใหญ่ การเพิ่มขึ้นหรือลดลงอาจเป็นผลจากการเปลี่ยนแปลงของค่าน้ำหนักตัวหรือความสูง การแปลผลจึงต้องเปรียบเทียบกับค่าดัชนีมวลกายของเด็กที่มีอายุและเพศเดียวกัน หรือ BMI Z score
             </li>
             <li>
-            ดัชนีมวลกาย Z score มักถูกใช้บ่งบอกมวลไขมัน ระดับโภชนาการ
+              ดัชนีมวลกาย Z score มักถูกใช้บ่งบอกมวลไขมัน ระดับโภชนาการ
               <ul>
                 <li>น้ำหนักเกิน อ้วน จะมีดัชนีมวลกาย Z score มากกว่า +1 </li>
                 <li>น้ำหนักปกติ จะมีดัชนีมวลกาย Z score ระหว่าง -2  ถึง +1 </li>
@@ -375,13 +378,13 @@ const About = () => {
               </ul>
             </li>
             <li>
-            ในความเป็นจริงมวลร่างกายประกอบด้วย มวลกล้ามเนื้อและมวลไขมัน  ดัชนีมวลกายไม่สามารถบอกองค์ประกอบร่างกายหรือสัดส่วนของมวลกล้ามเนื้อและมวลไขมัน ได้
+              ในความเป็นจริงมวลร่างกายประกอบด้วย มวลกล้ามเนื้อและมวลไขมัน  ดัชนีมวลกายไม่สามารถบอกองค์ประกอบร่างกายหรือสัดส่วนของมวลกล้ามเนื้อและมวลไขมัน ได้
             </li>
           </ul>
         </Grid>
         <Grid xs={12} md={7} item style={{ padding: "2em" }}>
           <div className={classes.subheadText}>
-          ค่าปกติของดัชนีมวลกล้ามเนื้อ
+            ค่าปกติของดัชนีมวลกล้ามเนื้อ
           </div>
         </Grid>
         <Hidden only="xs">
@@ -389,16 +392,16 @@ const About = () => {
             <img src={mmigrow} style={{ width: "80vw" }} />
           </Grid>
         </Hidden>
-    <Grid item xs={12} md={6} style={{ margin: "1em" }}>
+        <Grid item xs={12} md={6} style={{ margin: "1em" }}>
           <ul>
             <li>
-            ดัชนีมวลกายคือ ค่าน้ำหนักตัวปรับด้วยค่าความสูง หรือ น้ำหนักตัว/ความสูง<sup>2</sup> กิโลกรัม/เมตร<sup>2</sup>
+              ดัชนีมวลกายคือ ค่าน้ำหนักตัวปรับด้วยค่าความสูง หรือ น้ำหนักตัว/ความสูง<sup>2</sup> กิโลกรัม/เมตร<sup>2</sup>
             </li>
             <li>
-            เพศชายจะมีดัชนีมวลกล้ามเนื้อสูงมากกว่าในเพศหญิง จะเห็นชัดเจนเมื่อเข้าสู่ระยะวัยรุ่น
+              เพศชายจะมีดัชนีมวลกล้ามเนื้อสูงมากกว่าในเพศหญิง จะเห็นชัดเจนเมื่อเข้าสู่ระยะวัยรุ่น
             </li>
             <li>
-            เด็กชาย ดัชนีมวลกล้ามเนื้อต้องมีค่าสูงกว่า
+              เด็กชาย ดัชนีมวลกล้ามเนื้อต้องมีค่าสูงกว่า
               <ul>
                 <li>อายุ 5-7 ปี 11.51 </li>
                 <li>อายุ 8-10 ปี 11.72</li>
@@ -407,7 +410,7 @@ const About = () => {
               </ul>
             </li>
             <li>
-            เด็กหญิง ดัชนีมวลกล้ามเนื้อต้องมีค่าสูงกว่า 
+              เด็กหญิง ดัชนีมวลกล้ามเนื้อต้องมีค่าสูงกว่า
               <ul>
                 <li>อายุ 5-7 ปี 10.45 </li>
                 <li>อายุ 8-10 ปี 10.54</li>

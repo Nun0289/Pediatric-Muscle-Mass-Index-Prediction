@@ -9,7 +9,7 @@ import NavBar from "../components/NavBar";
 import { useLocation } from "react-router-dom";
 import results from "../function/calculatorFunction";
 import FacebookIcon from "@material-ui/icons/Facebook";
-
+import background from '../img/BackgroundIMG.png'
 import pdfMake from "pdfmake/build/pdfmake";
 // import pdfFonts from "pdfmake/build/vfs_fonts";
 
@@ -49,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     minHeight: "calc(100vh - 64px)",
     backgroundColor: "orange",
+    background: `url('${background}')`,
     padding: "1em",
     fontFamily: "Kanit",
   },

@@ -34,6 +34,7 @@
 /* secondSection */
 .secondSection {
   min-height: calc(200vh + 64px);
+  background-image: url("../img/background\ polygon.png");
   /* display: flex;
   align-items: center;
   justify-content: center; */
@@ -85,6 +86,7 @@
 .thirdSection {
   height: calc(110vh);
   background-color: orange;
+  background-image: url("../img/BackgroundIMG.png");
   display: flex;
   justify-content: center;
   align-items: center;
