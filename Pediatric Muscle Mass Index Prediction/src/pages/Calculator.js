@@ -136,12 +136,12 @@ const Calculator = () => {
             <Grid xs={12} sm={6}>
               <Paper className={classes.boxCard}>
                 <div>
-                  <div className={classes.headText}>BMI-Zscore</div>
+                  <div className={classes.headText}>BMI</div>
                   <div>(ค่าดัชนีมวลกาย)</div>
                 </div>
                 <br></br>
                 <h3 className={classes.headText}>
-                  {userResult.bmizscore.toFixed(2)}
+                  {userResult.bmi.toFixed(2)}
                 </h3>
                 <br></br>
                 <br></br>
@@ -151,8 +151,8 @@ const Calculator = () => {
             <Grid xs={12} sm={6}>
               <Paper className={classes.boxCard}>
                 <div>
-                  <div className={classes.headText}>MMI</div> :
-                  ค่าดัชนีมวลกล้ามเนื้อ
+                  <div className={classes.headText}>MMI</div> 
+                  <div>(ค่าดัชนีมวลกล้ามเนื้อ)</div>
                 </div>
                 <br></br>
 

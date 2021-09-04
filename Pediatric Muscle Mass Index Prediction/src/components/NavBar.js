@@ -10,6 +10,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import { useState, createRef } from "react";
 import { Hidden } from "@material-ui/core";
+import logo from "../img/kmitl.png"
 import MenuIcon from "@material-ui/icons/Menu";
 
 const useStyles = makeStyles((theme) => ({
@@ -23,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "white",
     color: "black",
   },
+  MenuItem:{
+    fontFamily: "Kanit"
+  }
 }));
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -92,7 +96,9 @@ const NavBar = () => {
                   : { backgroundColor: "white" }
               }
             >
+              <div style={{fontFamily: "Kanit"}}>
               หน้าแรก
+              </div>
             </Button>
           </MenuItem>
           <MenuItem onClick={handleClose}>
@@ -104,7 +110,9 @@ const NavBar = () => {
                   : { backgroundColor: "white" }
               }
             >
+              <div style={{fontFamily: "Kanit"}}>
               เกี่ยวกับ
+              </div>
             </Button>
           </MenuItem>
           <MenuItem onClick={handleClose}>
@@ -117,7 +125,9 @@ const NavBar = () => {
                   : { backgroundColor: "white" }
               }
             >
+              <div style={{fontFamily: "Kanit"}}>
               โปรแกรมคำนวณ
+              </div>
             </Button>
           </MenuItem>
         </Menu>
@@ -130,7 +140,7 @@ const NavBar = () => {
       <>
         <Typography className={classes.title}>
           <Button component={Link} to="/">
-            KMITL
+          <img src={logo} style={{ width: "10vh" }} />
           </Button>
         </Typography>
         <div>
@@ -144,7 +154,9 @@ const NavBar = () => {
                   : { backgroundColor: "white" }
               }
             >
+              <div style={{fontFamily: "Kanit"}}>
               หน้าแรก
+              </div>
             </Button>
             <Button
               onClick={aboutSection.onClick}
@@ -154,7 +166,9 @@ const NavBar = () => {
                   : { backgroundColor: "white" }
               }
             >
+              <div style={{fontFamily: "Kanit"}}>
               เกี่ยวกับ
+              </div>
             </Button>
             <Button
               onClick={calcSection.onClick}
@@ -165,7 +179,9 @@ const NavBar = () => {
                   : { backgroundColor: "white" }
               }
             >
+              <div style={{fontFamily: "Kanit"}}>
               โปรแกรมคำนวณ
+              </div>
             </Button>
           </Hidden>
           <Hidden smUp>

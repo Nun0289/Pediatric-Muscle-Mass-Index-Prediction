@@ -1,16 +1,24 @@
 import men_LSM from "../data/men_LSM.json";
 import women_LSM from "../data/women_LSM.json";
-const finalresult = {}
+const finalresult = {};
 
 function results(gender, age, weight, height, gripstrength) {
   var bmi = calbmi(weight, height);
   var bmizscore = calBMIZscore(gender, age, bmi);
-  var wholemusclemass = calWholeMuscleMass(
-    gender,
-    weight,
-    height,
-    gripstrength
-  );
+  if (gripstrength != null) {
+    var wholemusclemass = calWholeMuscleMass(
+      gender,
+      weight,
+      height,
+      gripstrength
+    );
+  } else {
+    var wholemusclemass = calWholeMuscleMassWithOutGripstrenght(
+      gender,
+      weight,
+      height,
+    );
+  }
   var musclemassindex = calMuscleMassIndex(wholemusclemass, height);
   finalresult.bmi = bmi;
   finalresult.bmizscore = bmizscore;
@@ -57,6 +65,16 @@ function calWholeMuscleMass(gender, weight, height, gripstrength) {
     0.105 * weight +
     0.296 * height -
     22.438;
+  return wholemusclemass;
+}
+function calWholeMuscleMassWithOutGripstrenght(gender, weight, height) {
+  if (gender == "male") {
+    gender = 1;
+  } else {
+    gender = 0;
+  }
+  var wholemusclemass =
+    -30.472 + 1.440 * gender + 0.117 * weight + 0.374 * height;
   return wholemusclemass;
 }
 function calMuscleMassIndex(wholemusclemass, height) {
@@ -132,11 +150,11 @@ function reusltZscore(bmizscore) {
       finalresult.resultWeight = "น้ำหนักน้อย,ผอม";
       finalresult.resultMuscle = "มวลกล้ามเนื้อปกติ";
     }
-    if (bmizscore > -2 && bmizscore <= -1) {
+    if (bmizscore >= -2 && bmizscore <= 1) {
       finalresult.resultWeight = "น้ำหนักปกติ";
       finalresult.resultMuscle = "มวลกล้ามเนื้อปกติ";
     }
-    if (bmizscore > -1) {
+    if (bmizscore > 1) {
       finalresult.resultWeight = "น้ำหนักเกิน,อ้วน";
       finalresult.resultMuscle = "มวลกล้ามเนื้อปกติ";
     }
@@ -146,11 +164,11 @@ function reusltZscore(bmizscore) {
       finalresult.resultWeight = "น้ำหนักน้อย,ผอม";
       finalresult.resultMuscle = "มวลกล้ามน้อย";
     }
-    if (bmizscore > -2 && bmizscore <= -1) {
+    if (bmizscore >= -2 && bmizscore <= 1) {
       finalresult.resultWeight = "น้ำหนักปกติ";
       finalresult.resultMuscle = "มวลกล้ามเนื้อน้อย";
     }
-    if (bmizscore > -1) {
+    if (bmizscore > 1) {
       finalresult.resultWeight = "น้ำหนักเกิน,อ้วน";
       finalresult.resultMuscle = "มวลกล้ามเนื้อน้อย";
     }

@@ -31,7 +31,11 @@ const useStyles = makeStyles((theme) => ({
   },
   textField: {
     marginBottom: 10,
-  },
+  },Body:{
+    fontFamily:"Kanit"
+  },Button:{
+    fontFamily:"Kanit"
+  }
 }));
 
 const Home = () => {
@@ -54,8 +58,7 @@ const Home = () => {
       gender != "" &&
       age != "" &&
       height != "" &&
-      weight != "" &&
-      gripstrength != ""
+      weight != ""
     ) {
       if (age >= 5 && age <= 16) {
         var result = results(gender, age, weight, height, gripstrength);
@@ -175,6 +178,7 @@ const Home = () => {
                         to="/about"
                         variant="outlined"
                         color="primary"
+                        style={{fontFamily:"Kanit"}}
                       >
                         อ่านเพิ่มเติม
                       </Button>
@@ -320,7 +324,7 @@ const Home = () => {
                       className={classes.textField}
                       InputProps={{
                         endAdornment: (
-                          <InputAdornment position="end">
+                          <InputAdornment position="end" >
                             กิโลกรัม
                           </InputAdornment>
                         ),
