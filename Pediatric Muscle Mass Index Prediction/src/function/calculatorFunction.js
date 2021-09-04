@@ -88,28 +88,28 @@ function resultMMI(musclemassindex, age, gender) {
       if (musclemassindex >= 11.51) {
         finalresult.mmiresult = "ปกติ";
       } else {
-        finalresult.mmiresult = "ผิดปกติ";
+        finalresult.mmiresult = "ต่ำกว่าปกติ";
       }
     }
     if (age <= 10 && age >= 8) {
       if (musclemassindex >= 11.72) {
         finalresult.mmiresult = "ปกติ";
       } else {
-        finalresult.mmiresult = "ผิดปกติ";
+        finalresult.mmiresult = "ต่ำกว่าปกติ";
       }
     }
     if (age <= 13 && age >= 11) {
       if (musclemassindex >= 12.26) {
         finalresult.mmiresult = "ปกติ";
       } else {
-        finalresult.mmiresult = "ผิดปกติ";
+        finalresult.mmiresult = "ต่ำกว่าปกติ";
       }
     }
     if (age <= 16 && age >= 14) {
       if (musclemassindex >= 13.46) {
         finalresult.mmiresult = "ปกติ";
       } else {
-        finalresult.mmiresult = "ผิดปกติ";
+        finalresult.mmiresult = "ต่ำกว่าปกติ";
       }
     }
   } else {
@@ -117,28 +117,28 @@ function resultMMI(musclemassindex, age, gender) {
       if (musclemassindex >= 10.45) {
         finalresult.mmiresult = "ปกติ";
       } else {
-        finalresult.mmiresult = "ผิดปกติ";
+        finalresult.mmiresult = "ต่ำกว่าปกติ";
       }
     }
     if (age <= 10 && age >= 8) {
       if (musclemassindex >= 10.54) {
         finalresult.mmiresult = "ปกติ";
       } else {
-        finalresult.mmiresult = "ผิดปกติ";
+        finalresult.mmiresult = "ต่ำกว่าปกติ";
       }
     }
     if (age <= 13 && age >= 11) {
       if (musclemassindex >= 11.07) {
         finalresult.mmiresult = "ปกติ";
       } else {
-        finalresult.mmiresult = "ผิดปกติ";
+        finalresult.mmiresult = "ต่ำกว่าปกติ";
       }
     }
     if (age <= 16 && age >= 14) {
       if (musclemassindex >= 11.66) {
         finalresult.mmiresult = "ปกติ";
       } else {
-        finalresult.mmiresult = "ผิดปกติ";
+        finalresult.mmiresult = "ต่ำกว่าปกติ";
       }
     }
   }
