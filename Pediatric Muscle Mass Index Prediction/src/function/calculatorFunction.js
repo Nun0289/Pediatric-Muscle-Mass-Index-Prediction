@@ -1,6 +1,6 @@
 import men_LSM from "../data/men_LSM.json";
 import women_LSM from "../data/women_LSM.json";
-const finalresult = [];
+const finalresult = {}
 
 function results(gender, age, weight, height, gripstrength) {
   var bmi = calbmi(weight, height);

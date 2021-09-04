@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import axios from "axios";
 import { saveAs } from "file-saver";
 import { useState } from "react";
+import NavBar from "../components/NavBar";
 import { useLocation } from "react-router-dom";
 import results from "../function/calculatorFunction";
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -63,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
   },
   boxCard: {
     backgroundColor: "#F4F1F1",
-    margin: "3em 5em 5em 5em",
+    margin: "3vw",
     textAlign: "center",
     padding: "2em",
     borderRadius: "1em",
@@ -95,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
 
 const createAndDownloadPDF = (bmizscore, resultWeight, musclemassindex, resultMuscle, mmiresult, food, physicalActivity, exercise, gender, age, weight, height, gripstrength, bmi) => {
   axios
-    .post("/create-pdf", {bmizscore, resultWeight, musclemassindex, resultMuscle, mmiresult, food, physicalActivity, exercise, gender, age, weight, height, gripstrength, bmi})
+    .post("/create-pdf", { bmizscore, resultWeight, musclemassindex, resultMuscle, mmiresult, food, physicalActivity, exercise, gender, age, weight, height, gripstrength, bmi })
 
     .then(() => axios.get("fetch-pdf", { responseType: "blob" }))
     .then((res) => {
@@ -104,19 +105,28 @@ const createAndDownloadPDF = (bmizscore, resultWeight, musclemassindex, resultMu
     });
 };
 
-function printPDF() {
-  pdfMake.createPdf(doc).download("report.pdf");
+// function printPDF() {
+//   pdfMake.createPdf(doc).download("report.pdf");
+// }
+
+const setState = (state) =>{
+  localStorage.setItem('user',JSON.stringify(state))
+  return state
 }
 
+const getState = () => {
+  return JSON.parse(localStorage.getItem('user'))
+}
+
+
 const Calculator = () => {
-  const [name, setName] = useState("mem");
-  const [age, setAge] = useState(10);
   const classes = useStyles();
   const location = useLocation();
   var state = location.result;
-  var userResult = state.result;
+  var userResult = state !== undefined ? setState(state.result) : getState()
   return (
     <div className={classes.calcPage}>
+      <NavBar />
       <Container maxWidth="lg" disableGutters>
         <Paper className={classes.paperOutside}>
           <center>
