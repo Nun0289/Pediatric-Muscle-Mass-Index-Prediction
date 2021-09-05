@@ -420,16 +420,7 @@ const About = () => {
             </li>
           </ul>
         </Grid>
-        <Grid xs={12} md={7} item style={{ padding: "2em" }}>
-          <div className={classes.subheadText}>
-            Whole Muscle Mass
-          </div>
-        </Grid>
-        <Hidden only="xs">
-          <Grid xs={12} md={5} container justify="center">
-            <img src={wmm} style={{ width: "80vw" }} />
-          </Grid>
-        </Hidden>
+      
       </div>
     </>
   );

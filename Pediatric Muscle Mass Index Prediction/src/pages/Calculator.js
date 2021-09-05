@@ -184,10 +184,6 @@ const Calculator = () => {
                   การแปรผลดัชนีมวลกาย : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.resultWeight}
                 </div></p>
                 <p>
-                  <GiBiceps />
-                  การแปรผลดัชนีกล้ามเนื้อและดัชนีมวลกาย : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.mmiresult}
-                </div></p>
-                <p>
                   <IoFastFood />
                   อาหาร : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.food}
                 </div></p>
@@ -244,10 +240,6 @@ const Calculator = () => {
                 <p>
                   <GiBiceps />
                   การแปรผลดัชนีมวลกาย : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.resultWeight}
-                </div></p>
-                <p>
-                  <GiBiceps />
-                  การแปรผลดัชนีกล้ามเนื้อและดัชนีมวลกาย : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.mmiresult}
                 </div></p>
                 <p>
                   <IoFastFood />
