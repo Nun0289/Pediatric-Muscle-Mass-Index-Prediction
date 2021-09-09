@@ -1,4 +1,14 @@
 module.exports = ( {bmizscore, resultWeight, musclemassindex, resultMuscle, mmiresult, food, physicalActivity, exercise, gender, age, weight, height, gripstrength, bmi}) => {
+    
+    const checkWeight = (weight) => {
+        if(weight == "น้ำหนักเกิน,อ้วน") {
+          return "red"
+        } else if (weight == "น้ำหนักปกติ") {
+          return "green"
+        } else {
+          return "dodgerBlue"
+        }
+      }
     return `
     <html lang="en">
 <head>
@@ -10,7 +20,7 @@ module.exports = ( {bmizscore, resultWeight, musclemassindex, resultMuscle, mmir
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body{
-            padding: 12px;
+            padding: 14px;
             font-size: 8px;
         }
         .head {
@@ -18,16 +28,20 @@ module.exports = ( {bmizscore, resultWeight, musclemassindex, resultMuscle, mmir
             width: auto;
             height: 100px;
             font-size: 20px;
-            padding: 5px 5px 40px 5px;
+            padding: 5px 5px 20px 5px;
+        }
+        .box {
+            width: auto;
+            height: 155;
+            text-align: center;
         }
         .contain {
-            text-align: center;
+            margin-lleft: 7px;
+            margin-right: 7px;
             background-color: #F4F1F1;
-            width: 271px;
-            height: 175px;
-            margin: 5px;
-            padding: 20px 2px 0px 2px;
-            border-radius: 3px;
+            width: 260px;
+            height: 100%;
+            border-radius: 10px;
             display: inline-block;
         }
         .content {
@@ -45,8 +59,25 @@ module.exports = ( {bmizscore, resultWeight, musclemassindex, resultMuscle, mmir
             display: inline-block;
             font-size: 22px;
         }
+        .headTextRed {
+            color: #F31515;
+            display: inline-block;
+            font-size: 22px;
+        }
+        .headTextGreen {
+            color: #49D646;
+            display: inline-block;
+            font-size: 22px;
+        }
         .space {
             margin: 5px 0px 0px 0px;
+        }
+        .conclusion-head {
+            display: inline;
+        }
+        .conclusion {
+            color: orange;
+            display: inline;
         }
     </style>
 </head>
@@ -54,21 +85,23 @@ module.exports = ( {bmizscore, resultWeight, musclemassindex, resultMuscle, mmir
     <div class="head">
         <h2>ผลประเมิน</h2>
     </div>
+    <div class='box'>
     <div class="contain">
         <div class="headText space">BMI-Zscore</div>
         <div>(ค่าดัชนีมวลกาย)</div>
         <br>
         <div class="headText space">${bmizscore.toFixed(2)}</div>
         <br>
-        <div class="headText space">${resultWeight}</div>
+        <div class="headText space" style='color:${checkWeight(resultWeight)};'>${resultWeight}</div>
     </div>
     <div class="contain">
-        <div class="space"><div class='headText'>MMI</div>:ค่าดัชนีมวลกล้ามเนื้อ</div>
-        <div style="color: #F4F1F1;">tesr</div>
+        <div class='headText space'>MMI</div>
+        <div>(ค่าดัชนีมวลกล้ามเนื้อ)</div>
         <br>
         <div class="headText space">${musclemassindex.toFixed(2)}</div>
         <br>
-        <div class="headText space">${resultMuscle}</div>
+        <div class="headText space" style='color: ${resultMuscle=="มวลกล้ามเนื้อน้อย"? 'red':'green'}'>${resultMuscle}</div>
+    </div>
     </div>
     <div style="
     text-align: left;
@@ -78,35 +111,35 @@ module.exports = ( {bmizscore, resultWeight, musclemassindex, resultMuscle, mmir
             margin:80px 0px 0px 0px;
             border-radius: 3px;
     ">
-        <div style="float:left;width:50%;border: 1px solid lightgray;height:100%;padding: 1%;
+        <div style="float:left;width:49.5%;border: 1px solid lightgray;height:100%;padding: 1%;
         border-radius: 3px">
         <p style="padding-bottom: 7px;">คำแนะนำ</p>
-        <p><i class="fa fa-line-chart" aria-hidden="true"></i> การแปรผลดัชนีมวลกล้ามเนื้อ : ${resultMuscle}</p>
-        <p><i class="fa fa-line-chart" aria-hidden="true"></i> การแปรผลดัชนีมวลกาย : ${resultWeight}</p>
-        <p><i class="fa fa-line-chart" aria-hidden="true"></i> การแปรผลดังนีกล้ามเนื้อและดัชนีมวลกาย : ${mmiresult}</p>
-        <p><i class="fa fa-coffee" aria-hidden="true"></i> อาหาร : ${food}</p>
-        <p><i class="fa fa-male" aria-hidden="true"></i> กิจกรรมทางกาย : ${physicalActivity}</p>
-        <p><i class="fa fa-futbol-o" aria-hidden="true"></i> การออกกำลังกาย : ${exercise}</p></div>
-        <div style="display:inline-block;width:50%;
+        <div class='conclusion-head'><i class="fa fa-line-chart" aria-hidden="true"></i> การแปรผลดัชนีมวลกล้ามเนื้อ : <div class='conclusion'>${resultMuscle}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-line-chart" aria-hidden="true"></i> การแปรผลดัชนีมวลกาย : <div class='conclusion'>${resultWeight}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-line-chart" aria-hidden="true"></i> การแปรผลดังนีกล้ามเนื้อและดัชนีมวลกาย : <div class='conclusion'>${mmiresult}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-coffee" aria-hidden="true"></i> อาหาร : <div class='conclusion'>${food}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-male" aria-hidden="true"></i> กิจกรรมทางกาย : <div class='conclusion'>${physicalActivity}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-futbol-o" aria-hidden="true"></i> การออกกำลังกาย : <div class='conclusion'>${exercise}</div></div></br></br></div>
+        <div style="display:inline-block;width:49.5%;
         border: 1px solid lightgray;
         height:100%;
         border-radius: 3px;
         padding: 1%;">
         <p style="padding-bottom: 7px;">สรุปผล</p>
-        <p><i class="fa fa-transgender" aria-hidden="true"></i> เพศ : ${gender}</p>
-        <p><i class="fa fa-plus-square" aria-hidden="true"></i> อายุ : ${age}</p>
-        <p><i class="fa fa-male" aria-hidden="true"></i> น้ำหนัก : ${weight}</p>
-        <p><i class="fa fa-male" aria-hidden="true"></i> ส่วนสูง : ${height}</p>
-        <p><i class="fa fa-hand-rock-o" aria-hidden="true"></i> แรงบีบมือ : ${gripstrength}</p>
-        <p><i class="fa fa-line-chart" aria-hidden="true"></i> ดัชนีมวลกล้ามเนื้อ : ${musclemassindex.toFixed(2)}</p>
-        <p><i class="fa fa-line-chart" aria-hidden="true"></i> การแปรผลดัชนีมวลกล้ามเนื้อ : ${resultMuscle}</p>
-        <p><i class="fa fa-line-chart" aria-hidden="true"></i> ดัชนีมวลกาย(BMI) : ${bmi.toFixed(2)}</p>
-        <p><i class="fa fa-line-chart" aria-hidden="true"></i> ดัชนีมวลกาย(Z-score) : ${bmizscore.toFixed(2)}</p>
-        <p><i class="fa fa-line-chart" aria-hidden="true"></i> การแปรผลดัชนีมวลกาย : ${resultWeight}</p>
-        <p><i class="fa fa-line-chart" aria-hidden="true"></i> การแปรผลดัชนีกล้ามเนื้อและดัชนีมวลกาย : ${mmiresult}</p>
-        <p><i class="fa fa-coffee" aria-hidden="true"></i> อาหาร : ${food}</p>
-        <p><i class="fa fa-male" aria-hidden="true"></i> กิจกรรมทางกาย : ${physicalActivity}</p>
-        <p><i class="fa fa-futbol-o" aria-hidden="true"></i> การออกกำลังกาย : ${exercise}</p>
+        <div class='conclusion-head'><i class="fa fa-transgender" aria-hidden="true"></i> เพศ : <div class='conclusion'>${gender=="male"?'ชาย':'หญิง'}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-plus-square" aria-hidden="true"></i> อายุ : <div class='conclusion'>${age}</div> ปี</div></br></br>
+        <div class='conclusion-head'><i class="fa fa-male" aria-hidden="true"></i> น้ำหนัก : <div class='conclusion'>${weight}</div> กิโลกรัม</div></br></br>
+        <div class='conclusion-head'><i class="fa fa-male" aria-hidden="true"></i> ส่วนสูง : <div class='conclusion'>${height}</div> เซนติเมตร</div></br></br>
+        <div class='conclusion-head'><i class="fa fa-hand-rock-o" aria-hidden="true"></i> แรงบีบมือ : <div class='conclusion'>${gripstrength==""?'ไม่พบข้อมูล':gripstrength}</div> กิโลกรัม</div></br></br>
+        <div class='conclusion-head'><i class="fa fa-line-chart" aria-hidden="true"></i> ดัชนีมวลกล้ามเนื้อ : <div class='conclusion'>${musclemassindex.toFixed(2)}</div> กิโลกรัม/เมตร<sup>2</sup></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-line-chart" aria-hidden="true"></i> การแปรผลดัชนีมวลกล้ามเนื้อ : <div class='conclusion'>${resultMuscle}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-line-chart" aria-hidden="true"></i> ดัชนีมวลกาย(BMI) : <div class='conclusion'>${bmi.toFixed(2)}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-line-chart" aria-hidden="true"></i> ดัชนีมวลกาย(Z-score) : <div class='conclusion'>${bmizscore.toFixed(2)}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-line-chart" aria-hidden="true"></i> การแปรผลดัชนีมวลกาย : <div class='conclusion'>${resultWeight}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-line-chart" aria-hidden="true"></i> การแปรผลดัชนีกล้ามเนื้อและดัชนีมวลกาย : <div class='conclusion'>${mmiresult}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-coffee" aria-hidden="true"></i> อาหาร : <div class='conclusion'>${food}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-male" aria-hidden="true"></i> กิจกรรมทางกาย : <div class='conclusion'>${physicalActivity}</div></div></br></br>
+        <div class='conclusion-head'><i class="fa fa-futbol-o" aria-hidden="true"></i> การออกกำลังกาย : <div class='conclusion'>${exercise}</div></div></br></br>
         </div>
     </div>
 </body>

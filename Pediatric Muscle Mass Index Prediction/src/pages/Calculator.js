@@ -128,6 +128,15 @@ const Calculator = () => {
   var userResult = state !== undefined ? setState(state.result) : getState()
   const [bmicolor, setbmicolor] = useState("green");
   const [mmicolor, setmmicolor] = useState("green");
+  const checkWeight = (weight) => {
+    if(weight == "น้ำหนักเกิน,อ้วน") {
+      return "red"
+    } else if (weight == "น้ำหนักปกติ") {
+      return "green"
+    } else {
+      return "dodgerBlue"
+    }
+  }
   return (
     <div className={classes.calcPage}>
       <NavBar />
@@ -150,7 +159,8 @@ const Calculator = () => {
                 <br></br>
                 <br></br>
                 <h4 className={classes.headText}
-                style={{color: userResult.resultWeight=="น้ำหนักเกิน,อ้วน"? 'red':'green'}}>{userResult.resultWeight}</h4>
+                //userResult.resultWeight=="น้ำหนักเกิน,อ้วน"? 'red':'green'
+                style={{color: checkWeight(userResult.resultWeight)}}>{userResult.resultWeight}</h4>
               </Paper>
             </Grid>
             <Grid xs={12} sm={6}>
