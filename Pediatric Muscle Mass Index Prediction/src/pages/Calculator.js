@@ -9,10 +9,8 @@ import NavBar from "../components/NavBar";
 import { useLocation } from "react-router-dom";
 import results from "../function/calculatorFunction";
 import FacebookIcon from "@material-ui/icons/Facebook";
-import background from '../img/BackgroundIMG.png'
+import background from "../img/BackgroundIMG.png";
 import pdfMake from "pdfmake/build/pdfmake";
-// import pdfFonts from "pdfmake/build/vfs_fonts";
-
 import { Icon } from "semantic-ui-react";
 import { FaTwitter } from "react-icons/fa";
 import {
@@ -25,24 +23,6 @@ import {
 } from "react-icons/io5";
 import { GiBiceps } from "react-icons/gi";
 import { HiOutlinePlus, HiOutlineSwitchVertical } from "react-icons/hi";
-
-import { doc } from "../documents/Template";
-
-// pdfMake.vfs = pdfFonts.pdfMake.vfs;
-// pdfMake.fonts = {
-//   THSarabunNew: {
-//     normal: 'THSarabunNew.ttf',
-//     bold: 'THSarabunNew-Bold.ttf',
-//     italics: 'THSarabunNew-Italic.ttf',
-//     bolditalics: 'THSarabunNew-BoldItalic.ttf'
-//   },
-//   Roboto: {
-//     normal: 'Roboto-Regular.ttf',
-//     bold: 'Roboto-Medium.ttf',
-//     italics: 'Roboto-Italic.ttf',
-//     bolditalics: 'Roboto-MediumItalic.ttf'
-//   }
-// }
 
 const useStyles = makeStyles((theme) => ({
   calcPage: {
@@ -92,51 +72,87 @@ const useStyles = makeStyles((theme) => ({
   },
   dangerText: {
     color: "#F31515",
-  },GiBiceps:{
-    color: 'orange'
-  }
+  },
+  GiBiceps: {
+    color: "orange",
+  },
 }));
 
-const createAndDownloadPDF = (bmizscore, resultWeight, musclemassindex, resultMuscle, mmiresult, food, physicalActivity, exercise, gender, age, weight, height, gripstrength, bmi) => {
+const createAndDownloadPDF = (
+  bmizscore,
+  resultWeight,
+  musclemassindex,
+  resultMuscle,
+  mmiresult,
+  food,
+  physicalActivity,
+  exercise,
+  gender,
+  age,
+  weight,
+  height,
+  gripstrength,
+  bmi
+) => {
   axios
-    .post("https://pmmip-server.herokuapp.com/create-pdf", { bmizscore, resultWeight, musclemassindex, resultMuscle, mmiresult, food, physicalActivity, exercise, gender, age, weight, height, gripstrength, bmi })
+    .post("https://pmmip-server.herokuapp.com/create-pdf", {
+      bmizscore,
+      resultWeight,
+      musclemassindex,
+      resultMuscle,
+      mmiresult,
+      food,
+      physicalActivity,
+      exercise,
+      gender,
+      age,
+      weight,
+      height,
+      gripstrength,
+      bmi,
+    })
 
-    .then(() => axios.get("https://pmmip-server.herokuapp.com/fetch-pdf", { responseType: "blob" }))
+    .then(() =>
+      axios.get("https://pmmip-server.herokuapp.com/fetch-pdf", {
+        responseType: "blob",
+      })
+    )
     .then((res) => {
       const pdfBlob = new Blob([res.data], { type: "application/pdf" });
       saveAs(pdfBlob, "REPORT.pdf");
     });
 };
 
-// function printPDF() {
-//   pdfMake.createPdf(doc).download("report.pdf");
-// }
-
-const setState = (state) =>{
-  localStorage.setItem('user',JSON.stringify(state))
-  return state
-}
+const setState = (state) => {
+  localStorage.setItem("user", JSON.stringify(state));
+  return state;
+};
 
 const getState = () => {
-  return JSON.parse(localStorage.getItem('user'))
-}
+  return JSON.parse(localStorage.getItem("user"));
+};
 
 const Calculator = () => {
   const classes = useStyles();
   const location = useLocation();
   var state = location.result;
-  var userResult = state !== undefined ? setState(state.result) : getState()
-  const [bmicolor, setbmicolor] = useState("green");
-  const [mmicolor, setmmicolor] = useState("green");
+  var userResult = state !== undefined ? setState(state.result) : getState();
   const checkWeight = (weight) => {
-    if(weight == "น้ำหนักเกิน,อ้วน") {
-      return "red"
+    if (weight == "น้ำหนักเกิน,อ้วน") {
+      return "red";
     } else if (weight == "น้ำหนักปกติ") {
-      return "green"
+      return "green";
     } else {
-      return "dodgerBlue"
+      return "#CCCC00";
     }
-  }
+  };
+  const checkmuscle = (weight) => {
+    if (weight == "มวลกล้ามเนื้อน้อย") {
+      return "red";
+    } else {
+      return "green";
+    }
+  };
   return (
     <div className={classes.calcPage}>
       <NavBar />
@@ -158,14 +174,18 @@ const Calculator = () => {
                 </h3>
                 <br></br>
                 <br></br>
-                <h4 className={classes.headText}
-                style={{color: checkWeight(userResult.resultWeight)}}>{userResult.resultWeight}</h4>
+                <h4
+                  className={classes.headText}
+                  style={{ color: checkWeight(userResult.resultWeight) }}
+                >
+                  {userResult.resultWeight}
+                </h4>
               </Paper>
             </Grid>
             <Grid xs={12} sm={6}>
               <Paper className={classes.boxCard}>
                 <div>
-                  <div className={classes.headText}>MMI</div> 
+                  <div className={classes.headText}>MMI</div>
                   <div>(ค่าดัชนีมวลกล้ามเนื้อ)</div>
                 </div>
                 <br></br>
@@ -175,7 +195,14 @@ const Calculator = () => {
                 </h3>
                 <br></br>
                 <br></br>
-                <h4 className={classes.headText}style={{color: userResult.resultMuscle=="มวลกล้ามเนื้อน้อย"? 'red':'green'}}>{userResult.resultMuscle}</h4>
+                <h4
+                  className={classes.headText}
+                  style={{
+                    color: checkmuscle(userResult.resultWeight),
+                  }}
+                >
+                  {userResult.resultMuscle}
+                </h4>
               </Paper>
             </Grid>
           </Grid>
@@ -186,24 +213,69 @@ const Calculator = () => {
                 <br></br>
                 <p>
                   <GiBiceps />
-                  การแปรผลดัชนีมวลกล้ามเนื้อ : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.resultMuscle} 
-                </div></p>
+                  การแปรผลดัชนีมวลกล้ามเนื้อ :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: checkmuscle(userResult.resultWeight),
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.resultMuscle}
+                  </div>
+                </p>
                 <p>
                   <GiBiceps />
-                  การแปรผลดัชนีมวลกาย : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.resultWeight}
-                </div></p>
+                  การแปรผลดัชนีมวลกาย :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: checkWeight(userResult.resultWeight),
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.resultWeight}
+                  </div>
+                </p>
                 <p>
                   <IoFastFood />
-                  อาหาร : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.food}
-                </div></p>
+                  อาหาร :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.food}
+                  </div>
+                </p>
                 <p>
                   <IoWalk />
-                  กิจกรรมทางกาย : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.physicalActivity} 
-                </div></p>
+                  กิจกรรมทางกาย :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.physicalActivity}
+                  </div>
+                </p>
                 <p>
                   <IoBicycle />
-                  การออกกำลังกาย : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.exercise}
-                </div></p>
+                  การออกกำลังกาย :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.exercise}
+                  </div>
+                </p>
               </Paper>
             </Grid>
             <Grid xs={12} sm={6}>
@@ -212,56 +284,180 @@ const Calculator = () => {
                 <br></br>
                 <p>
                   <IoMaleFemale />
-                  เพศ : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.gender=="male"?'ชาย':'หญิง'}
-                </div></p>
+                  เพศ :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.gender == "male" ? "ชาย" : "หญิง"}
+                  </div>
+                </p>
                 <p>
                   <HiOutlineSwitchVertical />
-                  อายุ : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.age}</div>   ปี
-                  </p>
+                  อายุ :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.age}
+                  </div>{" "}
+                  ปี
+                </p>
                 <p>
                   <IoManSharp />
-                  น้ำหนัก : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.weight} 
-                </div>    กิโลกรัม</p>
+                  น้ำหนัก :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.weight}
+                  </div>{" "}
+                  กิโลกรัม
+                </p>
                 <p>
                   <IoAccessibility />
-                  ส่วนสูง : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.height} 
-                </div>    เซนติเมตร</p>
+                  ส่วนสูง :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.height}
+                  </div>{" "}
+                  เซนติเมตร
+                </p>
                 <p>
                   <GiBiceps />
-                  เเรงบีบมือ : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.gripstrength==""?'ไม่พบข้อมูล':userResult.gripstrength}
-                </div>    กิโลกรัม</p>
+                  เเรงบีบมือ :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.gripstrength == ""
+                      ? "ไม่พบข้อมูล"
+                      : userResult.gripstrength}
+                  </div>{" "}
+                  กิโลกรัม
+                </p>
                 <p>
                   <GiBiceps />
-                  ดัชนีมวลกล้ามเนื้อ : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.musclemassindex.toFixed(2)} 
-                </div>   กิโลกรัม/เมตร<sup>2</sup></p>
+                  ดัชนีมวลกล้ามเนื้อ :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.musclemassindex.toFixed(2)}
+                  </div>{" "}
+                  กิโลกรัม/เมตร<sup>2</sup>
+                </p>
                 <p>
                   <GiBiceps />
-                  การแปรผลดัชนีมวลกล้ามเนื้อ : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.resultMuscle}
-                </div></p>
+                  การแปรผลดัชนีมวลกล้ามเนื้อ :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: checkmuscle(userResult.resultWeight),
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.resultMuscle}
+                  </div>
+                </p>
                 <p>
                   <GiBiceps />
-                  ดัชนีมวลกาย(BMI) : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.bmi.toFixed(2)}
-                </div></p>
+                  ดัชนีมวลกาย(BMI) :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.bmi.toFixed(2)}
+                  </div>
+                </p>
                 <p>
                   <GiBiceps />
-                  ดัชนีมวลกาย(Z-score) : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.bmizscore.toFixed(2)}
-                </div></p>
+                  ดัชนีมวลกาย(Z-score) :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.bmizscore.toFixed(2)}
+                  </div>
+                </p>
                 <p>
                   <GiBiceps />
-                  การแปรผลดัชนีมวลกาย : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.resultWeight}
-                </div></p>
+                  การแปรผลดัชนีมวลกาย :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: checkWeight(userResult.resultWeight),
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.resultWeight}
+                  </div>
+                </p>
                 <p>
                   <IoFastFood />
-                  อาหาร : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.food}
-                </div></p>
+                  อาหาร :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.food}
+                  </div>
+                </p>
                 <p>
                   <IoWalk />
-                  กิจกรรมทางกาย : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.physicalActivity}
-                </div></p>
+                  กิจกรรมทางกาย :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.physicalActivity}
+                  </div>
+                </p>
                 <p>
                   <IoBicycle />
-                  การออกกำลังกาย : <div style={{fontFamily:'Kanit',color:'orange',display:'inline'}}>{userResult.exercise}
-                </div></p>
+                  การออกกำลังกาย :{" "}
+                  <div
+                    style={{
+                      fontFamily: "Kanit",
+                      color: "blue",
+                      display: "inline",
+                    }}
+                  >
+                    {userResult.exercise}
+                  </div>
+                </p>
               </Paper>
             </Grid>
           </Grid>
@@ -270,11 +466,26 @@ const Calculator = () => {
             color="primary"
             variant="contained"
             // onClick={() => createAndDownloadPDF(name)}
-            onClick={() => createAndDownloadPDF(userResult.bmizscore, userResult.resultWeight, userResult.musclemassindex, userResult.resultMuscle, userResult.mmiresult, userResult.food, userResult.physicalActivity, userResult.exercise, userResult.gender, userResult.age, userResult.weight, userResult.height, userResult.gripstrength, userResult.bmi)}
+            onClick={() =>
+              createAndDownloadPDF(
+                userResult.bmizscore,
+                userResult.resultWeight,
+                userResult.musclemassindex,
+                userResult.resultMuscle,
+                userResult.mmiresult,
+                userResult.food,
+                userResult.physicalActivity,
+                userResult.exercise,
+                userResult.gender,
+                userResult.age,
+                userResult.weight,
+                userResult.height,
+                userResult.gripstrength,
+                userResult.bmi
+              )
+            }
           >
-            <div style={{fontFamily:'Kanit'}}>
-            บันทึกผล
-            </div>
+            <div style={{ fontFamily: "Kanit" }}>บันทึกผล</div>
           </Button>
           * อ่านเพิ่มเติมเกี่ยวกับ
           โปรแกรมวิเคราะห์องค์ประกอบร่างกายและดัชนีมวลกล้ามเนื้อสำหรับเด็กและผู้ใหญ่

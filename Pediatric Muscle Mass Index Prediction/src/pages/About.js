@@ -5,8 +5,7 @@ import grow from "../img/grow.png";
 import mmigrow from "../img/mmigrow.png"
 import bms from "../img/bms.png"
 import growgarph from "../img/growgraph.jpg"
-import wmm from "../img/wmm.jpg"
-import { TextField, Button, Grid, Hidden } from "@material-ui/core";
+import { Grid, Hidden } from "@material-ui/core";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -40,7 +39,7 @@ const About = () => {
     <>
       <NavBar />
       <div className={classes.container}>
-        <Grid item xs={12} md={6} style={{ margin: "1em" }}>
+        <Grid item xs={12} style={{ margin: "1em" }}>
           <div className={classes.headText}>คำนำ</div>
           <p>
             โรงเรียนทุกแห่งจะมีการเฝ้าระวังและติดตามสุขภาพทางกายของเด็กนักเรียนเป็นประจำทุกปี
@@ -63,7 +62,7 @@ const About = () => {
             อาหารและกิจกรรมทางกายคือปัจจัยหลักมีผลต่อการเปลี่ยนแปลงขององค์ประกอบของร่างกายในเด็กที่กำลังเจริญเติบโต
           </p>
         </Grid>
-        <Grid item xs={12} md={6} style={{ margin: "1em" }}>
+        <Grid item xs={12} style={{ margin: "1em" }}>
           <div className={classes.subheadText}>
             ประเมินดัชนีมวลกล้ามเนื้อสำหรับเด็กด้วยแรงบีบมือ
           </div>
@@ -84,7 +83,7 @@ const About = () => {
           เพื่อใช้ในการส่งเสริมการสร้างมวลกล้ามเนื้อ
           และรักษาระดับมวลกล้ามเนื้อให้มีค่าคงที่ในเด็ก
         </Grid>
-        <Grid item xs={12} md={6} style={{ margin: "1em" }}>
+        <Grid item xs={12} style={{ margin: "1em" }}>
           <div className={classes.headText}>หลักการและเหตุผล</div>
           <ul>
             <li>
@@ -263,14 +262,14 @@ const About = () => {
             </li>
           </ul>
         </Grid>
-        <Grid xs={12} md={7} item style={{ padding: "2em" }}>
+        <Grid xs={12}  item style={{ padding: "2em" }}>
           <div className={classes.subheadText}>
             การเปลี่ยนแปลงของเปอร์เซ็นต์มวลกล้ามเนื้อและดัชนีมวลกล้ามเนื้อ
             ผลจากการเจิญเติบโต จากเด็กเข้าสู่วัยรุ่น
           </div>
         </Grid>
         <Hidden only="xs">
-          <Grid xs={12} md={5} container justify="center">
+          <Grid xs={12}  container justify="center">
             <img src={grow} style={{ width: "80vw" }} />
           </Grid>
         </Hidden>
@@ -312,7 +311,7 @@ const About = () => {
             </TableBody>
           </Table>
         </TableContainer>
-        <Grid item xs={12} md={6} style={{ margin: "1em" }}>
+        <Grid item xs={12} style={{ margin: "1em" }}>
           <ul>
             <li>
               น้ำหนักตัวของร่างกายประกอบขึ้นจาก มวลไขมันและมวลปราศจากไขมัน มวลกล้ามเนื้อเป็นองค์ประกอบส่วนใหญ่ของมวลปราศจากไขมัน และมวลอื่น ๆเช่น กระดูก เอ็น เนื้อเยื่ออื่น
@@ -334,17 +333,17 @@ const About = () => {
           </ul>
         </Grid>
         <Hidden only="xs">
-          <Grid xs={12} md={5} container justify="center">
+          <Grid xs={12}  container justify="center">
             <img src={growgarph} style={{ width: "80vw" }} />
           </Grid>
         </Hidden>
-        <Grid xs={12} md={7} item style={{ padding: "2em" }}>
+        <Grid xs={12}  item style={{ padding: "2em" }}>
           <div className={classes.subheadText}>
             ดัชนีมวลกายต่ำ และ ดัชนีมวลกายสูง
           </div>
         </Grid>
         <Hidden only="xs">
-          <Grid xs={12} md={5} container justify="center">
+          <Grid xs={12}  container justify="center">
             <img src={bms} style={{ width: "80vw" }} />
           </Grid>
         </Hidden>
@@ -358,7 +357,7 @@ const About = () => {
             </TableHead>
           </Table>
         </TableContainer>
-        <Grid item xs={12} md={6} style={{ margin: "1em" }}>
+        <Grid item xs={12} style={{ margin: "1em" }}>
           <ul>
             <li>
               ดัชนีมวลกายคือ ค่าน้ำหนักตัวปรับด้วยค่าความสูง หรือ น้ำหนักตัว/ความสูง<sup>2</sup> กิโลกรัม/เมตร<sup>2</sup>
@@ -382,17 +381,17 @@ const About = () => {
             </li>
           </ul>
         </Grid>
-        <Grid xs={12} md={7} item style={{ padding: "2em" }}>
+        <Grid xs={12}  item style={{ padding: "2em" }}>
           <div className={classes.subheadText}>
             ค่าปกติของดัชนีมวลกล้ามเนื้อ
           </div>
         </Grid>
         <Hidden only="xs">
-          <Grid xs={12} md={5} container justify="center">
+          <Grid xs={12}  container justify="center">
             <img src={mmigrow} style={{ width: "80vw" }} />
           </Grid>
         </Hidden>
-        <Grid item xs={12} md={6} style={{ margin: "1em" }}>
+        <Grid item xs={12} style={{ margin: "1em" }}>
           <ul>
             <li>
               ดัชนีมวลกายคือ ค่าน้ำหนักตัวปรับด้วยค่าความสูง หรือ น้ำหนักตัว/ความสูง<sup>2</sup> กิโลกรัม/เมตร<sup>2</sup>

@@ -162,7 +162,7 @@ function reusltZscore(bmizscore) {
   if (finalresult.mmiresult == "ต่ำกว่าปกติ") {
     if (bmizscore < -2) {
       finalresult.resultWeight = "น้ำหนักน้อย,ผอม";
-      finalresult.resultMuscle = "มวลกล้ามน้อย";
+      finalresult.resultMuscle = "มวลกล้ามเนื้อน้อย";
     }
     if (bmizscore >= -2 && bmizscore <= 1) {
       finalresult.resultWeight = "น้ำหนักปกติ";
