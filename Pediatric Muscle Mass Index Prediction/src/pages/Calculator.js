@@ -198,7 +198,7 @@ const Calculator = () => {
                 <h4
                   className={classes.headText}
                   style={{
-                    color: checkmuscle(userResult.resultWeight),
+                    color: checkmuscle(userResult.resultMuscle),
                   }}
                 >
                   {userResult.resultMuscle}
@@ -217,7 +217,7 @@ const Calculator = () => {
                   <div
                     style={{
                       fontFamily: "Kanit",
-                      color: checkmuscle(userResult.resultWeight),
+                      color: checkmuscle(userResult.resultMuscle),
                       display: "inline",
                     }}
                   >
@@ -373,7 +373,7 @@ const Calculator = () => {
                   <div
                     style={{
                       fontFamily: "Kanit",
-                      color: checkmuscle(userResult.resultWeight),
+                      color: checkmuscle(userResult.resultMuscle),
                       display: "inline",
                     }}
                   >
