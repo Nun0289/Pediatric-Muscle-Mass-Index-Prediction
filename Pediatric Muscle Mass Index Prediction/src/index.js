@@ -4,16 +4,16 @@ import "./index.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Calculator from "./pages/Calculator";
-import NavBar from "./components/NavBar";
+
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import "./css/home.css";
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <NavBar />
       <Switch>
         <Route exact path="/">
           <Home />
@@ -25,6 +25,10 @@ ReactDOM.render(
           <Calculator />
         </Route>
       </Switch>
+      <div className="footer">
+        by Faculty of Medicine, King Mongkut's Institute of Technology
+        Ladkrabang
+      </div>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
