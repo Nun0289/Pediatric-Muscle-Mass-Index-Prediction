@@ -99,9 +99,9 @@ const useStyles = makeStyles((theme) => ({
 
 const createAndDownloadPDF = (bmizscore, resultWeight, musclemassindex, resultMuscle, mmiresult, food, physicalActivity, exercise, gender, age, weight, height, gripstrength, bmi) => {
   axios
-    .post("/create-pdf", { bmizscore, resultWeight, musclemassindex, resultMuscle, mmiresult, food, physicalActivity, exercise, gender, age, weight, height, gripstrength, bmi })
+    .post("https://pmmip-server.herokuapp.com/create-pdf", { bmizscore, resultWeight, musclemassindex, resultMuscle, mmiresult, food, physicalActivity, exercise, gender, age, weight, height, gripstrength, bmi })
 
-    .then(() => axios.get("fetch-pdf", { responseType: "blob" }))
+    .then(() => axios.get("https://pmmip-server.herokuapp.com/fetch-pdf", { responseType: "blob" }))
     .then((res) => {
       const pdfBlob = new Blob([res.data], { type: "application/pdf" });
       saveAs(pdfBlob, "REPORT.pdf");
@@ -159,7 +159,6 @@ const Calculator = () => {
                 <br></br>
                 <br></br>
                 <h4 className={classes.headText}
-                //userResult.resultWeight=="น้ำหนักเกิน,อ้วน"? 'red':'green'
                 style={{color: checkWeight(userResult.resultWeight)}}>{userResult.resultWeight}</h4>
               </Paper>
             </Grid>
